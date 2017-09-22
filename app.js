@@ -62,5 +62,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+app.get('/.well-known/acme-challenge/:str', function (req, res) {
+    res.send(process.env.LETS_ENCRYPT_CHALLENGE);
+})
 module.exports = app;
