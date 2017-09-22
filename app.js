@@ -11,6 +11,15 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
+// Read the Certbot response from an environment variable; we'll set this later:
+
+const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
+
+// Return the Let's Encrypt certbot response:
+app.get('/.well-known/acme-challenge/:content', function(req, res) {
+  res.send(letsEncryptReponse);
+});
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -62,7 +71,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.get('/.well-known/acme-challenge/:str', function (req, res) {
-    res.send(process.env.LETS_ENCRYPT_CHALLENGE);
-})
 module.exports = app;

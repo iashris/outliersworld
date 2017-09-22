@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/bin/certbot", line 9, in <module>
+    load_entry_point('certbot==0.8.1', 'console_scripts', 'certbot')()
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/lib/python2.7/site-packages/certbot/main.py", line 703, in main
+    args = cli.prepare_and_parse_args(plugins, cli_args)
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/lib/python2.7/site-packages/certbot/cli.py", line 858, in prepare_and_parse_args
+    return helpful.parse_args()
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/lib/python2.7/site-packages/certbot/cli.py", line 362, in parse_args
+    parsed_args = self.parser.parse_args(self.args)
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/vendor/lib/python2.7/site-packages/configargparse.py", line 216, in parse_args
+    env_vars = env_vars)
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/vendor/lib/python2.7/site-packages/configargparse.py", line 349, in parse_known_args
+    self, args=args, namespace=namespace)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py", line 1733, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py", line 1939, in _parse_known_args
+    start_index = consume_optional(start_index)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py", line 1879, in consume_optional
+    take_action(action, args, option_string)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/argparse.py", line 1807, in take_action
+    action(self, namespace, argument_values, option_string)
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/lib/python2.7/site-packages/certbot/cli.py", line 988, in __call__
+    add_domains(namespace, domain)
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/lib/python2.7/site-packages/certbot/cli.py", line 1008, in add_domains
+    domain = util.enforce_domain_sanity(domain.strip())
+  File "/usr/local/Cellar/certbot/0.8.1/libexec/lib/python2.7/site-packages/certbot/util.py", line 433, in enforce_domain_sanity
+    .format(domain))
+ConfigurationError: Requested domain http://www.outliers.world is not a FQDN
