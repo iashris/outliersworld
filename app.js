@@ -1,5 +1,7 @@
 var express = require('express');
 var path = require('path');
+const https = require('https');
+const fs = require('fs');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -19,6 +21,7 @@ const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
 app.get('/.well-known/acme-challenge/:content', function(req, res) {
   res.send(letsEncryptReponse);
 });
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

@@ -7,19 +7,23 @@
 var app = require('../app');
 var debug = require('debug')('outliersapp:server');
 var http = require('http');
-
+var path=require('path');
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-
+const https = require('https');
+const fs = require('fs');
 /**
  * Create HTTP server.
  */
-
-var server = http.createServer(app);
+const options = {
+    cert: fs.readFileSync(path.join(__dirname,'../sslcerts/fullchain2.pem')),
+    key: fs.readFileSync(path.join(__dirname,'../sslcerts/privkey2.pem'))
+};
+var server = https.createServer(options,app);
 
 /**
  * Listen on provided port, on all network interfaces.
