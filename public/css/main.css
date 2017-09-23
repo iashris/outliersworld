@@ -157,8 +157,8 @@ audio{
 	text-align: center;
 	color:white;
 	font-family: 'Montserrat';
-	font-size:1.2em;
-	line-height: 1.617;
+	font-size:1em;
+	line-height: 1.417;
 }
 #continue{
 	margin-top: 15px;
@@ -179,7 +179,6 @@ position: fixed;
 margin-left: -50px;
 color:white;
 font-family: 'Montserrat';
-font-size: 1.1em;
     z-index: 400;
     text-align: center;
     padding:10px 0px;
