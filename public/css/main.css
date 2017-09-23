@@ -102,7 +102,8 @@ cursor: pointer;
 }
 .centered{
 	width: 100vw;
-    height: 80vh;
+    height: 60vh;
+    margin-top: 15vh;
     position: absolute;
     top:0;
     bottom: 0;
@@ -161,10 +162,15 @@ audio{
 }
 #continue{
 	margin-top: 15px;
-	font-family: 'Crimson Text';
 	color: white;
 	font-size: 0.9em;
 	opacity: 0.0;
+}
+.logo2{
+    height:100%;
+    margin-top: -4vh;
+    border:2px solid white;
+    transition: 1s all ease;
 }
 #footer{
     display: inline-block;

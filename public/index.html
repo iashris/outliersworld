@@ -6,7 +6,7 @@
   <title>Outliers : Launch</title>
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
 
@@ -19,7 +19,8 @@
 
   <div id="animdiv"></div>
   <div class="clickableintro centered">
-    <span class="play">Let's Go</span>
+  <img src="img/logo2.png" class="logo2">
+    <!-- <span class="play">Let's Go</span> -->
   </div>
   <div id="introsection" class="centered">
 
@@ -126,9 +127,10 @@ crossorigin="anonymous"></script>
    $('#footer').click(function(){
     window.location.href='home.html';
    });
-   $('.play').click(function(){
+   $('.logo2').click(function(){
     console.log('hh');
-    $(this).fadeOut("slow");
+    //$(this).fadeOut("slow");
+    $(this).css({marginTop: '-=35vh'});
     $('#footer').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
     audioPlayer.play();
     $('#animdiv').addClass('triggered');
