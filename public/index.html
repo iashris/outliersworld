@@ -42,7 +42,7 @@ integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 crossorigin="anonymous"></script>
 <script>
   $(document).ready(function() {
-    console.log("jj");
+    $('.logo2').css({marginTop: '-=4vh'}).animate({opacity: 1.0});
     var audioPlayer = document.getElementById("audiofile");
     var subtitles = document.getElementById("subtitles");
     var syncData = [
@@ -130,7 +130,7 @@ crossorigin="anonymous"></script>
    $('.logo2').click(function(){
     console.log('hh');
     //$(this).fadeOut("slow");
-    $(this).css({marginTop: '-=35vh'});
+    $(this).css({marginTop: '-=30vh'});
     $('#footer').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
     audioPlayer.play();
     $('#animdiv').addClass('triggered');

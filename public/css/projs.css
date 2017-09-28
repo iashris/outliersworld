@@ -1,0 +1,10 @@
+.navbar{
+	border-radius: 0;
+	height: 10vh;
+	background: white;
+	border:0;
+	border-bottom:1px solid #ddd;
+}
+html,body{
+background:#efefef;
+}
