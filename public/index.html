@@ -120,12 +120,12 @@ crossorigin="anonymous"></script>
 
     audioPlayer.onended=function(){
      $('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-     var timer=setTimeout(function () { window.location.href='home.html'; }, 3000);
+     var timer=setTimeout(function () { window.location='/home'; }, 3000);
    }
 
 
    $('#footer').click(function(){
-    window.location.href='home.html';
+    window.location='/home';
    });
    $('.logo2').click(function(){
     console.log('hh');
