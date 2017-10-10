@@ -6,7 +6,9 @@ router.get('/', function(req, res, next) {
   var viewOpts = { root: __dirname };
   res.sendFile('index.html');
 });
-
+router.get('/home',function(req,res,next){
+	res.render('home',{layout:'layout.hbs'})
+});
 router.get('/projects', function(req, res, next) {
   res.render('index', { layout: 'layout.hbs' })
 });

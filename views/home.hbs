@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>Outliers</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Crimson+Text" rel="stylesheet">
 	<style>
+	nav{
+		position: fixed;
+		z-index: 5;
+		top:0;
+		left:0;
+		width: 100%;
+	}
 		canvas {
 			height: 100%;
 			position: fixed;
 			top:0;
 			bottom: 0;
-			z-index: 0;
+			z-index: 1;
 			right: 0;
 			display: block;
 			outline: 0px;
@@ -32,12 +34,6 @@
 			max-width: 90vw;
 		}
 
-		.uppermenu{
-			position: fixed;
-			height:10vh;
-			background: #282828;
-			width: 100vw;
-		}
 		.baaki{
 			margin-top: 8vh;
 		}
@@ -100,22 +96,16 @@
 			canvas{
 				display: block;
 			}
-			.uppermenu{
-				width: 40vw;
-			}
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-		<!--[if lt IE 9]>
-			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
-			<![endif]-->
-			<script src="js/processing.js" type="text/javascript"></script>
-			<script type="text/javascript">
+		<script src="js/processing.js" type="text/javascript"></script>
+		<script type="text/javascript">
 // convenience function to get the id attribute of generated sketch html element
 function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 </script>
 
-</head>
+
 <body>
 	<div id="content">
 		<div>
@@ -132,10 +122,6 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 
 <div class="overlay">
 
-	<div class="uppermenu">
-		<img src="img/logo2.png" class="logo">
-	</div>
-	<br/>
 	<div class="baaki">
 		<div class="section">
 		<p>Outliers is an innovation platform to with a goal to encourage and promote open sourced technology and design projects that solve
@@ -207,4 +193,4 @@ crossorigin="anonymous"></script>
 
 </script>
 
-</html>
+
