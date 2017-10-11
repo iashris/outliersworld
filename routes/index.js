@@ -10,7 +10,14 @@ router.get('/home',function(req,res,next){
 	res.render('home',{layout:'layout.hbs'})
 });
 router.get('/projects', function(req, res, next) {
-  res.render('index', { layout: 'layout.hbs' })
+  res.render('projects', { layout: 'layout.hbs' })
 });
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { layout: 'layout.hbs' })
+});
+router.get('/clusters', function(req, res, next) {
+  res.render('clusters', { layout: 'layout.hbs' })
+});
+
 
 module.exports = router;
