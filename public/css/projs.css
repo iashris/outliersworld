@@ -1,21 +1,24 @@
 .navbar{
 position: fixed;
 z-index: 150;
-background: white;
+background: #fff;
 border:0;
 margin-top: -1px;
 color: black!important;
 border-radius: 0;
-box-shadow: 0;
 height: 5vh;
 top:0;
 left:0;
 right:0;
+  box-shadow: none;
+
 }
 .navbar-default .navbar-nav>li>a {
     color: black;
     min-height: 5vh;
     font-family: 'Montserrat';
+      box-shadow: none!important;
+
 }
 html,body{
 background:#efefef;
@@ -82,3 +85,96 @@ margin-top: -5%;
     -o-transform-origin: left center;
     transform-origin: left center;
 }
+
+		canvas {
+			height: 100%;
+			position: fixed;
+			top:40px;
+			bottom: 0;
+			z-index: 1;
+			left: 0;
+			display: block;
+			outline: 0px;
+			margin-left:20px;
+			margin-bottom: 1.5em;
+			display: none;
+		}
+		body,html{
+			background: #f3f3f3!important;
+		}
+
+		.overlay{
+			text-align: justify;
+			color:black;
+			font-family: 'Montserrat';
+			font-size:0.85em;
+			line-height: 1.717;
+			margin: 8vh 8vw;
+		}
+
+		.baaki{
+			margin-top: 20vh;
+		}
+		.logo{
+			height:30%;
+			margin-top:4vh;
+			border:2px solid white;
+			padding:1vh 1vw;
+		}
+		.header{
+			border-bottom: 2px solid white;
+			padding-bottom: 0px;
+		}
+		.section{
+			margin-top: 40px;
+			opacity: 0;
+			width: 92%;
+		}
+		input{
+			margin-top: 15px;
+			background: none;
+			outline: none;
+			border:0;
+			border-bottom: 1px solid white;
+			transition:1s all ease;
+			width: 80%;
+			color: white;
+			padding-bottom: 12px;
+			font-family: 'Montserrat';
+		}
+		.btn{
+			padding:10px;
+			border:2px solid white;
+			color:white;
+			transition: 0.5s all ease;
+			background: none;
+			font-family: 'Montserrat';
+			font-size: 1.2em;
+			cursor: pointer;
+			margin-top: 5vh;
+			margin-bottom: 5vh;
+			outline: none;
+		}
+		.btn:hover{
+			color:#282828;
+			background: white;
+			outline: none;
+		}
+		input:focus{
+		border-bottom: 1px solid #00a6f2;
+		}
+
+		@media (min-width: 767px){
+			.overlay{
+				visibility: visible;
+				max-width: 35vw;
+				margin: 5vh 8vw;
+			}
+			canvas{
+				display: block;
+			}
+			.baaki{
+			margin-left: 43vw;
+			width: 41vw;
+		}
+		}

@@ -7,8 +7,19 @@ int[] x = new int[num];
 int[] y = new int[num];
 int picIndex, maxpixel;
 int startMouseX = 0;
+color[] b1;
 color sandColor = color (255);
 PImage img;
+int Y_AXIS = 1;
+int X_AXIS = 2;
+String namesofppl[]={
+	"Dr. APJ Abdul Kalam",
+	"Rabindranath Tagore",
+	"Swami Vivekananda",
+	"Jehangir Ratanji Dadabhoy Tata",
+	"Sarvapalli Radhakrishnan",
+	"Homi Jehangir Bhabha"
+};
 String names[] =
 {
   "maestros/apj-min.png",
@@ -30,6 +41,8 @@ void setup()
   selectPicture(0);
   textSize (14);
   noSmooth();
+  b1 = {#2E112D,#014141,#2C3E50,#432C51,color(52,19,47)};
+
 }
 
 void setting()
@@ -39,7 +52,9 @@ void setting()
 
 void draw()
 {
-  background(52,19,47);
+
+
+  background(b1[picIndex%5]);
   loadPixels();
   int offset = 0;
   float speedFactor = 10 + (mouseY * 16.0) / height;
@@ -64,6 +79,11 @@ void draw()
       && (round(frameRate) > 60)
       && (usedParticles + 1000 <= num))     usedParticles += 1000;
   if(frameCount%600==0)changePicture(+1);
+
+  fill(255,255,255,190);
+  textSize(9);
+  //textAlign(CENTER);
+  text("India's Outliers | "+namesofppl[picIndex],35,height-80);
 }
 //--------------------------------------
 void restart()

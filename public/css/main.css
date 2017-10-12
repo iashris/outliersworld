@@ -70,7 +70,7 @@ html,body{
     right: 0;
     left: 0;
   shape-padding: 20px;
-  transition: all 0.45s ease; 
+  transition: all 0.45s ease;
     shape-inside: polygon(50vw 50vh ,50vw 50vh , 50vw 50vh, 50vw 50vh);
   -webkit-clip-path: polygon(50vw 50vh ,50vw 50vh , 50vw 50vh, 50vw 50vh);
 }
@@ -98,7 +98,7 @@ cursor: pointer;
     border-radius: 30px;
 }
 .play:hover{
-    
+
 }
 .centered{
 	width: 100vw;
