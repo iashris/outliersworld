@@ -160,6 +160,7 @@ margin-top: -5%;
 			background: white;
 			outline: none;
 		}
+
 		input:focus{
 		border-bottom: 1px solid #00a6f2;
 		}
