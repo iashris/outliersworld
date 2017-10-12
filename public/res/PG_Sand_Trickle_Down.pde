@@ -24,7 +24,7 @@ int pictures = names.length;
 void setup()
 {
 
-  size(480, 600);
+  size(460, 660);
   frameRate(60);
   maxpixel = height * width;
   selectPicture(0);
@@ -39,7 +39,7 @@ void setting()
 
 void draw()
 {
-  background(40);
+  background(52,19,47);
   loadPixels();
   int offset = 0;
   float speedFactor = 10 + (mouseY * 16.0) / height;

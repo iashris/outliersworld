@@ -4,30 +4,31 @@
 		canvas {
 			height: 100%;
 			position: fixed;
-			top:0;
+			top:40px;
 			bottom: 0;
 			z-index: 1;
 			left: 0;
 			display: block;
 			outline: 0px;
+			margin-left:20px;
 			margin-bottom: 1.5em;
 			display: none;
 		}
 		body,html{
-			background: #444!important;
+			background: #f3f3f3!important;
 		}
 
 		.overlay{
 			text-align: justify;
-			color:white;
+			color:black;
 			font-family: 'Montserrat';
 			font-size:0.85em;
 			line-height: 1.717;
-			margin: 2vh 8vw;
+			margin: 8vh 8vw;
 		}
 
 		.baaki{
-			margin-top: 8vh;
+			margin-top: 20vh;
 		}
 		.logo{
 			height:30%;
@@ -88,9 +89,8 @@
 				display: block;
 			}
 			.baaki{
-			margin-top: 8vh;
-			margin-left: 50vw;
-			width: 35vw;
+			margin-left: 43vw;
+			width: 41vw;
 		}
 		}
 	</style>
@@ -103,6 +103,8 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 
 
 <body>
+
+
 	<div id="content">
 		<div>
 			<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde"
