@@ -16,7 +16,7 @@ right:0;
 .navbar-default .navbar-nav>li>a {
     color: black;
     min-height: 5vh;
-    font-family: 'Montserrat';
+    font-family: 'Playfair Display';
       box-shadow: none!important;
 
 }
@@ -86,6 +86,7 @@ margin-top: -5%;
     transform-origin: left center;
 }
 
+}
 		canvas {
 			height: 100%;
 			position: fixed;

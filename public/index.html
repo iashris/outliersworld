@@ -6,7 +6,7 @@
   <title>Outliers : Launch</title>
 </head>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
 
@@ -27,7 +27,8 @@
    <audio id="audiofile" src="res/speech.mp3" controls></audio><br>
    <div id="subtitles"></div>
    <div id="continue">
-     <span>DR. APJ ABDUL KALAM, <em>11th President of India and a true outlier</em></span>
+     <span class="Outlier_Name">DR. APJ ABDUL KALAM</span><br/>
+     <span class="Outlier_Description">11th President Of India & An Outlier</span>
    </div>
  </div>
 
@@ -102,9 +103,8 @@ crossorigin="anonymous"></script>
       var element;
       for (var i = 0; i < syncData.length; i++) {
         element = document.createElement('span');
-        element.setAttribute("id", "c_" + i);
+        element.setAttribute("class", "word");
         element.innerText = syncData[i].text + " ";
-        element.style.visibility='hidden';
         subtitles.appendChild(element);
       }
     }
@@ -113,14 +113,15 @@ crossorigin="anonymous"></script>
       syncData.forEach(function(element, index, array){
         if( audioPlayer.currentTime >= element.start-1.9){
           var child=subtitles.children[index];
-          if(child.style.visibility=='hidden')$(child).css({opacity: 0.0, visibility: "visible",top:'20px'}).animate({opacity: 1.0,top:0});
+    //$(child).css({opacity: 0.0, visibility: "visible",top:'20px'}).animate({opacity: 1.0});
+//$(child).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+$(child).addClass('appeared');
         }
       });
     });
 
     audioPlayer.onended=function(){
      $('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-     var timer=setTimeout(function () { window.location='/home'; }, 3000);
    }
 
 
