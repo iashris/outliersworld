@@ -31,7 +31,6 @@ String names[] =
 };
 int pictures = names.length;
 
-//--------------------------------------
 void setup()
 {
 
@@ -42,9 +41,7 @@ void setup()
   textSize (14);
   noSmooth();
   b1 = {#2E112D,#014141,#2C3E50,#432C51,color(52,19,47)};
-
 }
-
 void setting()
 {
 
@@ -111,9 +108,5 @@ void selectPicture (int index)
 
 void changePicture (int delta)
 {
-
-
   selectPicture (picIndex + delta);
 }
-//--------------------------------------
-
