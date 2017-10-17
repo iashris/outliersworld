@@ -129,11 +129,13 @@ $(child).addClass('appeared');
     window.location='/home';
    });
    $('.logo2').click(function(){
-    console.log('hh');
+
+
     //$(this).fadeOut("slow");
-    $(this).css({marginTop: '-=30vh'});
+    //$(this).css({marginTop: '-=30vh'});
+    $(this).addClass('upwards');
     $('#footer').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-    audioPlayer.play();
+    setTimeout(function(){audioPlayer.play();},1000);
     $('#animdiv').addClass('triggered');
   });
  });

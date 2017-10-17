@@ -32,7 +32,10 @@ body {
   filter: blur(0px);
 
 }
-
+.upwards{
+	opacity: 0!important;
+	margin-top: -90vh!important;
+}
 
 .borders > * {
     position: fixed;
@@ -157,6 +160,10 @@ cursor: pointer;
 @media (min-width: 767px){
     .canvas{
         visibility: visible;
+    }
+    .upwards{
+    	opacity: 1.0;
+    	margin-top: -60vh!important;
     }
 .centered{
 	width: 60vw;
