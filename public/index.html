@@ -203,7 +203,11 @@ pop();
   for(var i=0;i<parseInt(width/70);i++){
   	for(var j=0;j<parseInt(height/70);j++){
   		var pickedchar=pickerz[10*i+j];
-  		text("{"+pickedchar+"}",i*70,j*70);
+  		if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ){
+  			if(pickedchar===undefined)pickedchar="भा";
+	text("{"+pickedchar+"}",i*70,j*70);
+}
+
   	}
   }
 
