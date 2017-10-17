@@ -5,6 +5,17 @@
 
   <title>Outliers : Launch</title>
 </head>
+<style type="text/css">
+	canvas {
+		position: fixed;
+		top: 0; left: 0;
+		z-index: 1;
+		}
+		#p5canvas{
+			position: relative;
+			z-index: 2;
+		}
+</style>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -16,7 +27,7 @@
     <div class="left"></div>
     <div class="right"></div>
   </div>
-
+  <div id="p5canvas"></div>
   <div id="animdiv"></div>
   <div class="clickableintro centered">
   <img src="img/logo2.png" class="logo2">
@@ -41,6 +52,7 @@
 src="https://code.jquery.com/jquery-2.2.4.min.js"
 integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
 <script>
   $(document).ready(function() {
     $('.logo2').css({marginTop: '-=4vh'}).animate({opacity: 1.0});
@@ -140,5 +152,66 @@ $(child).addClass('appeared');
   });
  });
 </script>
+<script type="text/javascript">
+var theta=0;
+var characters=['भा','रा','ता','ଭା','ରା','ତା','ভা','রা','তা','பா','ரா','தா','భా','రా','తా','ਭਾ','ਰਾ','ਤਾ','ഭാ','രാ','താ','ಭಾ','ರಾ','ತಾ','ભા','રા','તા','بھا','را','تا'];
+var pickerz=[];
+function setup() {
+	var can=createCanvas(windowWidth, windowHeight);
+	can.parent('#p5canvas');
+frameRate(30);
+textSize(24);
+textFont('Times New Roman');
+realign();
+}
+function realign(){
+	for(var i=0;i<parseInt(width/70);i++){
+  	for(var j=0;j<parseInt(height/70);j++){
+  		pickerz[10*i+j]=characters[parseInt(Math.random()*characters.length)];
+  	}
+  }
+}
 
+function realign2(){
+	for(var i=0;i<parseInt(width/70);i++){
+  	for(var j=0;j<parseInt(height/70);j++){
+  		if(Math.random()<0.3)pickerz[10*i+j]=characters[parseInt(Math.random()*characters.length)];
+  	}
+  }
+}
+
+function draw() {
+    theta+=.20;
+ clear();
+  stroke(255,255,255,60);
+  push();
+  translate(width/2, height/2);
+  rotate(PI*frameCount/1000);
+  noFill();
+  var r=250;
+  for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
+    beginShape();
+    for (var j=-sin(i)*r;j<sin(i)*r+sin(i);j+=sin(i)*20) {
+      curveVertex(j, cos(i)*r+sin(theta-(j/40))*abs(i*10));
+    }
+    endShape();
+  }
+pop();
+
+	noStroke();
+	fill(255,255,255,30);
+  for(var i=0;i<parseInt(width/70);i++){
+  	for(var j=0;j<parseInt(height/70);j++){
+  		var pickedchar=pickerz[10*i+j];
+  		text("{"+pickedchar+"}",i*70,j*70);
+  	}
+  }
+
+  if(frameCount%20==0)realign2();
+}
+
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+}
+</script>
 </html>
