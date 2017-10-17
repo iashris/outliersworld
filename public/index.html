@@ -54,10 +54,13 @@ integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
 <script>
-  $(document).ready(function() {
+
     $('.logo2').css({marginTop: '-=4vh'}).animate({opacity: 1.0});
     var audioPlayer = document.getElementById("audiofile");
     var subtitles = document.getElementById("subtitles");
+    var theta=0;
+var characters=['भा','रा','ता','ଭା','ରା','ତା','ভা','রা','তা','பா','ரா','தா','భా','రా','తా','ਭਾ','ਰਾ','ਤਾ','ഭാ','രാ','താ','ಭಾ','ರಾ','ತಾ','ભા','રા','તા','بھا','را','تا'];
+
     var syncData = [
     {"start": "1.9","text": "Those " },
     {"start": "2.2","text": "who " },
@@ -109,7 +112,9 @@ crossorigin="anonymous"></script>
     /* ... and so on ... full json is in the demo */
     ];
     createSubtitle();
-
+var pickerz=[];
+var RADIUS;
+var radiustrig=false;
     function createSubtitle()
     {
       var element;
@@ -142,20 +147,18 @@ $(child).addClass('appeared');
    });
    $('.logo2').click(function(){
 
-
+radiustrig=true;
     //$(this).fadeOut("slow");
     //$(this).css({marginTop: '-=30vh'});
     $(this).addClass('upwards');
+
     $('#footer').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
     setTimeout(function(){audioPlayer.play();},1000);
     $('#animdiv').addClass('triggered');
   });
- });
-</script>
-<script type="text/javascript">
-var theta=0;
-var characters=['भा','रा','ता','ଭା','ରା','ତା','ভা','রা','তা','பா','ரா','தா','భా','రా','తా','ਭਾ','ਰਾ','ਤਾ','ഭാ','രാ','താ','ಭಾ','ರಾ','ತಾ','ભા','રા','તા','بھا','را','تا'];
-var pickerz=[];
+
+
+
 function setup() {
 	var can=createCanvas(windowWidth, windowHeight);
 	can.parent('#p5canvas');
@@ -163,11 +166,12 @@ frameRate(30);
 textSize(24);
 textFont('Times New Roman');
 realign();
+RADIUS=250;
 }
 function realign(){
 	for(var i=0;i<parseInt(width/70);i++){
   	for(var j=0;j<parseInt(height/70);j++){
-  		pickerz[10*i+j]=characters[parseInt(Math.random()*characters.length)];
+  		pickerz[10*i+j]={character:characters[parseInt(Math.random()*characters.length)],transp:random(5,60)};
   	}
   }
 }
@@ -175,34 +179,41 @@ function realign(){
 function realign2(){
 	for(var i=0;i<parseInt(width/70);i++){
   	for(var j=0;j<parseInt(height/70);j++){
-  		if(Math.random()<0.3)pickerz[10*i+j]=characters[parseInt(Math.random()*characters.length)];
+  		if(Math.random()<0.05)pickerz[10*i+j].character=characters[parseInt(Math.random()*characters.length)];
+  		var delta=5*(noise(106*i+34*j+frameCount/10)-0.5);
+  		pickerz[10*i+j].transp=constrain(pickerz[10*i+j].transp+delta,12,60);
   	}
   }
 }
 
 function draw() {
+	if(radiustrig==true){
+		RADIUS=0;
+	}
     theta+=.20;
  clear();
-  stroke(255,255,255,60);
+//RADIUS=250;
   push();
   translate(width/2, height/2);
   rotate(PI*frameCount/1000);
   noFill();
-  var r=250;
+
   for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
+  	stroke(255,255,255,60);
     beginShape();
-    for (var j=-sin(i)*r;j<sin(i)*r+sin(i);j+=sin(i)*20) {
-      curveVertex(j, cos(i)*r+sin(theta-(j/40))*abs(i*10));
+    for (var j=-sin(i)*RADIUS;j<sin(i)*RADIUS+sin(i);j+=sin(i)*20) {
+      curveVertex(j, cos(i)*RADIUS+sin(theta-(j/40))*abs(i*10));
     }
     endShape();
   }
 pop();
 
 	noStroke();
-	fill(255,255,255,30);
+
   for(var i=0;i<parseInt(width/70);i++){
   	for(var j=0;j<parseInt(height/70);j++){
-  		var pickedchar=pickerz[10*i+j];
+  		if(pickerz[10*i+j].character)var pickedchar=pickerz[10*i+j].character;
+  		fill(255,255,255,pickerz[10*i+j].transp);
   		if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ){
   			if(pickedchar===undefined)pickedchar="भा";
 	text("{"+pickedchar+"}",i*70,j*70);
@@ -211,11 +222,12 @@ pop();
   	}
   }
 
-  if(frameCount%20==0)realign2();
+ realign2();
 }
 
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
 }
+
 </script>
 </html>
