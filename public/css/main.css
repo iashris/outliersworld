@@ -174,7 +174,9 @@ margin-top: 0;
     border-bottom: 3px solid white;
 }
 
-
+.section{
+	font-family: 'Playfair Display'!important;
+}
 @media (min-width: 767px){
     .canvas{
         visibility: visible;
@@ -206,4 +208,5 @@ margin-top: 0;
 .logo2{
 	height:190%;
 }
+
 }
