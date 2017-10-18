@@ -24,7 +24,6 @@ canvas {
 	<div id="animdiv"></div>
 	<div class="clickableintro centered">
 		<img src="img/logo2.png" class="logo2">
-		<!-- <span class="play">Let's Go</span> -->
 	</div>
 	<div id="introsection" class="centered">
 
@@ -48,7 +47,7 @@ crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
 <script>
 
-	$('.logo2').css({marginTop: '-=4vh'}).animate({opacity: 1.0});
+	$('.logo2').css({marginTop: '-=7vh'}).animate({opacity: 0.75});
 	var audioPlayer = document.getElementById("audiofile");
 	var subtitles = document.getElementById("subtitles");
 	var theta=0;
@@ -76,7 +75,7 @@ crossorigin="anonymous"></script>
 	{"end": "12","start": "9.8","text": "field " },
 	{"end": "12","start": "10.5","text": "of " },
 	{"end": "12","start": "10.7","text": "human " },
-	{"end": "12","start": "11.4","text": "endeavor, "},
+	{"end": "12","start": "11.2","text": "endeavor, "},
 	{"end": "14","start": "12.7","text": "the " },
 	{"end": "14","start": "12.9","text": "names " },
 	{"end": "14","start": "13.1","text": "of " },
@@ -167,6 +166,7 @@ $(child).addClass('appeared');
 		if(radiustrig==true){
 			RADIUS=0;
 		}
+
 		theta+=.20;
 		clear();
 push();
@@ -175,7 +175,7 @@ rotate(PI*frameCount/1000);
 noFill();
 
 for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
-	stroke(100,100,100,100);
+	stroke(100,100,100,150);
 	beginShape();
 	for (var j=-sin(i)*RADIUS;j<sin(i)*RADIUS+sin(i);j+=sin(i)*20) {
 		curveVertex(j, cos(i)*RADIUS+sin(theta-(j/40))*abs(i*10));

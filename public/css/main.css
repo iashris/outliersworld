@@ -2,6 +2,7 @@ html,body{
 	background: #262626;
 	text-align: center;
 	height: 100%;
+	border:30px 40px;
 }
 html {
     overflow: hidden;
@@ -38,57 +39,7 @@ body {
 	margin-top: -90vh!important;
 }
 
-.borders > * {
-    position: fixed;
-    z-index: 100;
-    background: white;
-    height: 20px;
-    width: 20px;
-    pointer-events: none;
-    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-    -moz-transition: -moz-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-    -webkit-transform-origin: center center;
-    -moz-transform-origin: center center;
-    -ms-transform-origin: center center;
-    -o-transform-origin: center center;
-    transform-origin: center center;
-    -webkit-transform: translate(0, 0) scale(1);
-    -moz-transform: translate(0, 0) scale(1);
-    -ms-transform: translate(0, 0) scale(1);
-    -o-transform: translate(0, 0) scale(1);
-    transform: translate(0, 0) scale(1);
-}
-.borders > *.top {
-    top: 0;
-    left: 0;
-    width: 100%;
-    -webkit-transform-origin: top center;
-    -moz-transform-origin: top center;
-    -ms-transform-origin: top center;
-    -o-transform-origin: top center;
-    transform-origin: top center;
-}
-.borders > *.bottom {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    -webkit-transform-origin: bottom center;
-    -moz-transform-origin: bottom center;
-    -ms-transform-origin: bottom center;
-    -o-transform-origin: bottom center;
-    transform-origin: bottom center;
-}
-.borders > *.left {
-    top: 0;
-    left: 0;
-    height: 100%;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -ms-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-}
+
 #continue{
 	visibility: hidden;
 }
@@ -145,6 +96,9 @@ cursor: pointer;
 
     margin: auto;
 }
+.section{
+	height: 110%;
+}
 .borders > *.right {
     top: 0;
     right: 0;
@@ -186,13 +140,18 @@ font-family: 'Playfair Display';
 }
 .logo2{
 
-height: 100%;
+height: 130%;
 margin-top: 0;
-    transition: 0.51s all ease;
     opacity: 0;
+
+
+  /* ...and now for the proper property */
+  transition:1s all,0.5s background;
+
+
 }
 .logo2:hover{
-    border:2px solid white;
+    background:rgb(227,66,66);
 }
 #footer{
     display: inline-block;
@@ -208,6 +167,8 @@ margin-top: 0;
     border-bottom: 3px solid #fff;
     cursor: pointer;
     opacity: 0;
+
+
 }
 #footer:hover{
     border-bottom: 3px solid white;
@@ -244,6 +205,5 @@ margin-top: 0;
 }
 .logo2{
 	height:190%;
-    margin-top: -2px;
 }
 }
