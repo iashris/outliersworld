@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Outliers : Launch</title>
+	<title>Outliers : Launch</title>
 </head>
 <style type="text/css">
-	canvas {
-		position: fixed;
-		top: 0; left: 0;
-		z-index: 1;
-		}
-		#p5canvas{
-			position: relative;
-			z-index: 2;
-		}
+canvas {
+	position: fixed;
+	top: 0; left: 0;
+	z-index: 1;
+}
+#p5canvas{
+	position: relative;
+	z-index: 2;
+}
 </style>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
+	<div id="p5canvas"></div>
+	<div id="animdiv"></div>
+	<div class="clickableintro centered">
+		<img src="img/logo2.png" class="logo2">
+		<!-- <span class="play">Let's Go</span> -->
+	</div>
+	<div id="introsection" class="centered">
 
-  <div class="borders">
-    <div class="top"></div>
-    <div class="bottom"></div>
-    <div class="left"></div>
-    <div class="right"></div>
-  </div>
-  <div id="p5canvas"></div>
-  <div id="animdiv"></div>
-  <div class="clickableintro centered">
-  <img src="img/logo2.png" class="logo2">
-    <!-- <span class="play">Let's Go</span> -->
-  </div>
-  <div id="introsection" class="centered">
+		<audio id="audiofile" src="res/speech.mp3" controls></audio><br>
+		<div id="subtitles"></div>
+		<div id="continue">
+			<span class="Outlier_Name">DR. APJ ABDUL KALAM</span><br/>
+			<span class="Outlier_Description">11th President Of India & An Outlier</span>
+		</div>
+	</div>
 
-   <audio id="audiofile" src="res/speech.mp3" controls></audio><br>
-   <div id="subtitles"></div>
-   <div id="continue">
-     <span class="Outlier_Name">DR. APJ ABDUL KALAM</span><br/>
-     <span class="Outlier_Description">11th President Of India & An Outlier</span>
-   </div>
- </div>
-
- <div id="footer">
-  Skip Intro
-</div>
+	<div id="footer">
+		Skip Intro
+	</div>
 
 </body>
 <script
@@ -55,99 +48,100 @@ crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
 <script>
 
-    $('.logo2').css({marginTop: '-=4vh'}).animate({opacity: 1.0});
-    var audioPlayer = document.getElementById("audiofile");
-    var subtitles = document.getElementById("subtitles");
-    var theta=0;
-var characters=['भा','रा','ता','ଭା','ରା','ତା','ভা','রা','তা','பா','ரா','தா','భా','రా','తా','ਭਾ','ਰਾ','ਤਾ','ഭാ','രാ','താ','ಭಾ','ರಾ','ತಾ','ભા','રા','તા','بھا','را','تا'];
+	$('.logo2').css({marginTop: '-=4vh'}).animate({opacity: 1.0});
+	var audioPlayer = document.getElementById("audiofile");
+	var subtitles = document.getElementById("subtitles");
+	var theta=0;
 
-    var syncData = [
-    {"start": "1.9","text": "Those " },
-    {"start": "2.2","text": "who " },
-    {"start": "2.6","text": "dare " },
-    {"start": "2.9","text": "to " },
-    {"start": "3.2","text": "imagine " },
-    {"start": "3.5","text": "the " },
-    {"start": "4","text": "impossible" },
-    {"start": "5.3","text": "are " },
-    {"start": "5.5","text": "the " },
-    {"start": "5.8","text": "ones " },
-    {"start": "6.3","text": "who " },
-    {"end": "8","start": "6.6","text": "break " },
-    {"end": "8","start": "6.8","text": "all " },
-    {"end": "8","start": "7","text": "the " },
-    {"end": "8","start": "7.2","text": "given " },
-    {"end": "8","start": "7.7","text": "limitations. " },
-    {"end": "12","start": "9.5","text": "In " },
-    {"end": "12","start": "9.6","text": "every " },
-    {"end": "12","start": "9.8","text": "field " },
-    {"end": "12","start": "10.5","text": "of " },
-    {"end": "12","start": "10.7","text": "human " },
-    {"end": "12","start": "11.4","text": "endeavor, "},
-    {"end": "14","start": "12.7","text": "the " },
-    {"end": "14","start": "12.9","text": "names " },
-    {"end": "14","start": "13.1","text": "of " },
-    {"end": "14","start": "13.3","text": "the " },
-    {"end": "14","start": "13.6","text": "people " },
-    {"end": "17","start": "14","text": "who " },
-    {"end": "17","start": "14.2","text": "imagine " },
-    {"end": "17","start": "14.6","text": "the " },
-    {"end": "17","start": "14.85","text": "impossible " },
-    {"end": "17","start": "15.5","text": "are " },
-    {"end": "17","start": "15.8","text": "engraved " },
-    {"end": "17","start": "16.2","text": "in " },
-    {"end": "17","start": "16.4","text": "our " },
-    {"end": "17","start": "16.6","text": "history. " },
-    {"end": "20","start": "17.8","text": "By " },
-    {"end": "20","start": "18","text": "breaking " },
-    {"end": "20","start": "18.5","text": "the " },
-    {"end": "20","start": "18.7","text": "limits " },
-    {"end": "20","start": "19","text": "of " },
-    {"end": "20","start": "19.25","text": "their " },
-    {"end": "20","start": "19.4","text": "imagination," },
-    {"end": "22","start": "20.5","text": "they " },
-    {"end": "22","start": "20.8","text": "change " },
-    {"end": "22","start": "21","text": "the " },
-    {"end": "22","start": "21.3","text": "world." }
-    /* ... and so on ... full json is in the demo */
-    ];
-    createSubtitle();
-var pickerz=[];
-var RADIUS;
-var radiustrig=false;
-    function createSubtitle()
-    {
-      var element;
-      for (var i = 0; i < syncData.length; i++) {
-        element = document.createElement('span');
-        element.setAttribute("class", "word");
-        element.innerText = syncData[i].text + " ";
-        subtitles.appendChild(element);
-      }
-    }
 
-    audioPlayer.addEventListener("timeupdate", function(e){
-      syncData.forEach(function(element, index, array){
-        if( audioPlayer.currentTime >= element.start-1.9){
-          var child=subtitles.children[index];
+	var syncData = [
+	{"start": "1.9","text": "Those " },
+	{"start": "2.2","text": "who " },
+	{"start": "2.6","text": "dare " },
+	{"start": "2.9","text": "to " },
+	{"start": "3.2","text": "imagine " },
+	{"start": "3.5","text": "the " },
+	{"start": "4","text": "impossible" },
+	{"start": "5.3","text": "are " },
+	{"start": "5.5","text": "the " },
+	{"start": "5.8","text": "ones " },
+	{"start": "6.3","text": "who " },
+	{"end": "8","start": "6.6","text": "break " },
+	{"end": "8","start": "6.8","text": "all " },
+	{"end": "8","start": "7","text": "the " },
+	{"end": "8","start": "7.2","text": "given " },
+	{"end": "8","start": "7.7","text": "limitations. " },
+	{"end": "12","start": "9.5","text": "In " },
+	{"end": "12","start": "9.6","text": "every " },
+	{"end": "12","start": "9.8","text": "field " },
+	{"end": "12","start": "10.5","text": "of " },
+	{"end": "12","start": "10.7","text": "human " },
+	{"end": "12","start": "11.4","text": "endeavor, "},
+	{"end": "14","start": "12.7","text": "the " },
+	{"end": "14","start": "12.9","text": "names " },
+	{"end": "14","start": "13.1","text": "of " },
+	{"end": "14","start": "13.3","text": "the " },
+	{"end": "14","start": "13.6","text": "people " },
+	{"end": "17","start": "14","text": "who " },
+	{"end": "17","start": "14.2","text": "imagine " },
+	{"end": "17","start": "14.6","text": "the " },
+	{"end": "17","start": "14.85","text": "impossible " },
+	{"end": "17","start": "15.5","text": "are " },
+	{"end": "17","start": "15.8","text": "engraved " },
+	{"end": "17","start": "16.2","text": "in " },
+	{"end": "17","start": "16.4","text": "our " },
+	{"end": "17","start": "16.6","text": "history. " },
+	{"end": "20","start": "17.8","text": "By " },
+	{"end": "20","start": "18","text": "breaking " },
+	{"end": "20","start": "18.5","text": "the " },
+	{"end": "20","start": "18.7","text": "limits " },
+	{"end": "20","start": "19","text": "of " },
+	{"end": "20","start": "19.25","text": "their " },
+	{"end": "20","start": "19.4","text": "imagination," },
+	{"end": "22","start": "20.5","text": "they " },
+	{"end": "22","start": "20.8","text": "change " },
+	{"end": "22","start": "21","text": "the " },
+	{"end": "22","start": "21.3","text": "world." }
+	/* ... and so on ... full json is in the demo */
+	];
+	createSubtitle();
+	var pickerz=[];
+	var RADIUS;
+	var radiustrig=false;
+	function createSubtitle()
+	{
+		var element;
+		for (var i = 0; i < syncData.length; i++) {
+			element = document.createElement('span');
+			element.setAttribute("class", "word");
+			element.innerText = syncData[i].text + " ";
+			subtitles.appendChild(element);
+		}
+	}
+
+	audioPlayer.addEventListener("timeupdate", function(e){
+		syncData.forEach(function(element, index, array){
+			if( audioPlayer.currentTime >= element.start-1.9){
+				var child=subtitles.children[index];
     //$(child).css({opacity: 0.0, visibility: "visible",top:'20px'}).animate({opacity: 1.0});
 //$(child).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
 $(child).addClass('appeared');
-        }
-      });
-    });
+}
+});
+	});
 
-    audioPlayer.onended=function(){
-     $('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-   }
+	audioPlayer.onended=function(){
+
+		setTimeout(function(){$('#continue').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});},1000);
+	}
 
 
-   $('#footer').click(function(){
-    window.location='/home';
-   });
-   $('.logo2').click(function(){
+	$('#footer').click(function(){
+		window.location='/home';
+	});
+	$('.logo2').click(function(){
 
-radiustrig=true;
+		radiustrig=true;
     //$(this).fadeOut("slow");
     //$(this).css({marginTop: '-=30vh'});
     $(this).addClass('upwards');
@@ -155,74 +149,39 @@ radiustrig=true;
     $('#footer').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
     setTimeout(function(){audioPlayer.play();},1000);
     $('#animdiv').addClass('triggered');
-  });
+});
 
 
 
-function setup() {
-	var can=createCanvas(windowWidth, windowHeight);
-	can.parent('#p5canvas');
-frameRate(30);
-textSize(24);
-textFont('Times New Roman');
-realign();
-RADIUS=250;
-}
-function realign(){
-	for(var i=0;i<parseInt(width/70);i++){
-  	for(var j=0;j<parseInt(height/70);j++){
-  		pickerz[10*i+j]={character:characters[parseInt(Math.random()*characters.length)],transp:random(5,60)};
-  	}
-  }
-}
-
-function realign2(){
-	for(var i=0;i<parseInt(width/70);i++){
-  	for(var j=0;j<parseInt(height/70);j++){
-  		if(Math.random()<0.05)pickerz[10*i+j].character=characters[parseInt(Math.random()*characters.length)];
-  		var delta=5*(noise(106*i+34*j+frameCount/10)-0.5);
-  		pickerz[10*i+j].transp=constrain(pickerz[10*i+j].transp+delta,12,60);
-  	}
-  }
-}
-
-function draw() {
-	if(radiustrig==true){
-		RADIUS=0;
+	function setup() {
+		var can=createCanvas(windowWidth, windowHeight);
+		can.parent('#p5canvas');
+		frameRate(30);
+		textSize(24);
+		textFont('Times New Roman');
+		RADIUS=250;
 	}
-    theta+=.20;
- clear();
-//RADIUS=250;
-  push();
-  translate(width/2, height/2);
-  rotate(PI*frameCount/1000);
-  noFill();
 
-  for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
-  	stroke(255,255,255,60);
-    beginShape();
-    for (var j=-sin(i)*RADIUS;j<sin(i)*RADIUS+sin(i);j+=sin(i)*20) {
-      curveVertex(j, cos(i)*RADIUS+sin(theta-(j/40))*abs(i*10));
-    }
-    endShape();
-  }
-pop();
 
-	noStroke();
+	function draw() {
+		if(radiustrig==true){
+			RADIUS=0;
+		}
+		theta+=.20;
+		clear();
+push();
+translate(width/2, height/2);
+rotate(PI*frameCount/1000);
+noFill();
 
-  for(var i=0;i<parseInt(width/70);i++){
-  	for(var j=0;j<parseInt(height/70);j++){
-  		if(pickerz[10*i+j].character)var pickedchar=pickerz[10*i+j].character;
-  		fill(255,255,255,pickerz[10*i+j].transp);
-  		if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ){
-  			if(pickedchar===undefined)pickedchar="भा";
-	text("{"+pickedchar+"}",i*70,j*70);
+for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
+	stroke(100,100,100,100);
+	beginShape();
+	for (var j=-sin(i)*RADIUS;j<sin(i)*RADIUS+sin(i);j+=sin(i)*20) {
+		curveVertex(j, cos(i)*RADIUS+sin(theta-(j/40))*abs(i*10));
+	}
+	endShape();
 }
-
-  	}
-  }
-
- realign2();
 }
 
 function windowResized() {

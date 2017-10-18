@@ -1,11 +1,12 @@
 html,body{
-	background: #333;
+	background: #262626;
 	text-align: center;
 	height: 100%;
 }
 html {
     overflow: hidden;
     height: 100%;
+    font-family:'Playfair Display';
 }
 body {
     height: 100%;
@@ -157,6 +158,62 @@ cursor: pointer;
    .canvas{
         visibility: hidden;
     }
+
+audio{
+	visibility: hidden;
+}
+#introsection{
+	padding:0px 50px;
+}
+#subtitles{
+	text-align: center;
+	color:white;
+	font-family: 'Playfair display';
+	font-size:1em;
+	line-height: 1.417;
+}
+#continue{
+	margin-top: 25px;
+	color: white;
+	opacity: 0.0;
+}
+.Outlier_Name{
+font-family: 'Playfair Display';
+font-size: 1.4em;
+}
+.Outlier_Description{
+font-family: 'Playfair Display';
+}
+.logo2{
+
+height: 100%;
+margin-top: 0;
+    transition: 0.51s all ease;
+    opacity: 0;
+}
+.logo2:hover{
+    border:2px solid white;
+}
+#footer{
+    display: inline-block;
+    bottom: 12vh;
+	position: fixed;
+	margin-left: -50px;
+	color:white;
+	font-family: 'Playfair display';
+    z-index: 400;
+    text-align: center;
+    padding:10px 0px;
+    width: 100px;
+    border-bottom: 3px solid #fff;
+    cursor: pointer;
+    opacity: 0;
+}
+#footer:hover{
+    border-bottom: 3px solid white;
+}
+
+
 @media (min-width: 767px){
     .canvas{
         visibility: visible;
@@ -185,56 +242,8 @@ cursor: pointer;
     font-size:1.2em!important;
     line-height: 1.617!important;
 }
-}
-audio{
-	visibility: hidden;
-}
-#introsection{
-	padding:0px 50px;
-}
-#subtitles{
-	text-align: center;
-	color:white;
-	font-family: 'Playfair display';
-	font-size:1em;
-	line-height: 1.417;
-}
-#continue{
-	margin-top: 25px;
-	color: white;
-	opacity: 0.0;
-}
-.Outlier_Name{
-font-family: 'Playfair Display';
-font-size: 1.4em;
-}
-.Outlier_Description{
-	font-family: 'Muli';
-}
 .logo2{
-    height:100%;
-    border:2px solid white;
-    transition: 1s all ease,border 0.2s ease;
-    opacity: 0;
+	height:190%;
+    margin-top: -2px;
 }
-.logo2:hover{
-    border:4px solid white;
-}
-#footer{
-    display: inline-block;
-    bottom: 12vh;
-	position: fixed;
-	margin-left: -50px;
-	color:white;
-	font-family: 'Playfair display';
-    z-index: 400;
-    text-align: center;
-    padding:10px 0px;
-    width: 100px;
-    border-bottom: 3px solid #fff;
-    cursor: pointer;
-    opacity: 0;
-}
-#footer:hover{
-    border-bottom: 3px solid white;
 }

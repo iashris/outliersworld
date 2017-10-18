@@ -116,7 +116,7 @@ margin-top: -5%;
 		.overlay{
 			text-align: justify;
 			color:black;
-			font-family: 'Montserrat';
+			font-family: 'Playfair Display';
 			font-size:0.85em;
 			line-height: 1.717;
 			margin: 8vh 8vw;
@@ -158,7 +158,7 @@ margin-top: -5%;
 			color:white;
 			transition: 0.5s all ease;
 			background: none;
-			font-family: 'Montserrat';
+			font-family: 'Playfair Display';
 			font-size: 1.2em;
 			cursor: pointer;
 			margin-top: 5vh;
