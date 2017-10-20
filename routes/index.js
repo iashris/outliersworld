@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var path=require('path');
+var gsheet=require('gsheet-web');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var viewOpts = { root: __dirname };
@@ -19,7 +20,13 @@ router.get('/clusters', function(req, res, next) {
   res.render('clusters', { layout: 'layout.hbs' })
 });
 router.get('/resources', function(req, res, next) {
-  res.render('resources', { layout: 'layout.hbs' })
+	gsheet('1XrDALyA84t4jT3Mh2WdhAd_lzpyc9eSfT_n5MoV1bOA', (data)=>{
+  console.log('Try callback ', data.length);  // array of objects
+ // res.render('resources', { layout: 'layout.hbs' })
+ res.send(data);
+
+});
+
 });
 
 
