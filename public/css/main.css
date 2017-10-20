@@ -257,6 +257,73 @@ video{
 	left:10%;
 	z-index: 1;
 }
+.scrollbtn{
+	position: absolute;
+	bottom:10%;
+	left:50%;
+	z-index: 3;
+}
+
+#section10 a {
+  padding-top: 60px;
+}
+#section10 a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+#section10 a span::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: sdb10 2s infinite;
+  animation: sdb10 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb10 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb10 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .cover-image-wrapper {
     width: 40%;
     height: 70%;
@@ -280,6 +347,7 @@ ul.nav>li{
 	font-weight: 800;
 	text-transform: uppercase;
 	font-size: 3em;
+	display: block;
 }
 @media (min-width: 767px){
     .canvas{
@@ -287,6 +355,7 @@ ul.nav>li{
     }
     .pramukh{
 	font-size: 4em;
+	display: inline-block;
 }
     .upwards{
     	opacity: 1.0;

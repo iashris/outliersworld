@@ -34,7 +34,7 @@ html {
 body {
     height: 100%;
     overflow: auto;
-    --highlight:#fd5457;;
+    --highlight:white;;
 }
 .imlo{
 height: 200%;
