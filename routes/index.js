@@ -18,6 +18,9 @@ router.get('/contact', function(req, res, next) {
 router.get('/clusters', function(req, res, next) {
   res.render('clusters', { layout: 'layout.hbs' })
 });
+router.get('/resources', function(req, res, next) {
+  res.render('resources', { layout: 'layout.hbs' })
+});
 
 
 module.exports = router;

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('This is the admin portal which gives a rough idea about things');
 });
 
 module.exports = router;

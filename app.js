@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var godmode = require('./routes/godmode');
 
 var app = express();
 
@@ -41,7 +41,7 @@ app.use("/maestros",  express.static(__dirname + '/public/maestros'));
 
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/godmode', godmode);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
