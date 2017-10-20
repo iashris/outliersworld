@@ -32,7 +32,7 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 		<div class="section" id="section1">
 			<div class="vidoverlay">
 				<h1 class='pramukh'>1.3 Billion <span id="swap-text">People</span></h1>
-				<p>We Want To Build India With Technology, Design and Spirituality</p>
+				<p>Fusing <span class="field">Technology</span> <span class="field">Design</span> & <span class="field">Spirituality</span> to rebuild a nation</p>
 			</div>
 			<div class="cover-image-wrapper">
 				<video autoplay loop muted playsinline id="banvid" src="res/Outliers_Website_Footage.mp4" type="video/mp4">
@@ -60,7 +60,7 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 				    		}
 				    		var i=0;
 
-				    		var wordlist=['people','possibilities','innovations','opportunities','ideators'];
+				    		var wordlist=['people','possibilities','multiverses','innovators','opportunities','ideators'];
 				    		var $text=$('#swap-text');
 				  function changeword(){
 				  	i++;
@@ -81,7 +81,11 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 				    			<h1>Page 2</h1>
 				    			<p>Yahan something more.</p>
 				    		</div>
-				    		<div class="col-xs-12 col-md-6">
+				    		<div class="col-xs-12 col-md-6 bigchunk" id="scroll-4">
+				    			<p>
+				    			Lorem ipsum dolor sit amet, vim exerci feugait propriae eu, ne timeam salutandi sit, vix no labore iudicabit. Vis sale congue mnesarchum in, pro saepe legere maluisset an. Ius eu omnium verear lucilius. Ius sonet persecuti ea, nec eu tollit detraxit. Mel no habeo copiosae atomorum, vix vulputate rationibus ex, ne vix adhuc singulis tacimates. Et sea legimus meliore platonem. Has ad quas inani iusto.</p>
+				    			<p>
+				    			Lorem ipsum dolor sit amet, vim exerci feugait propriae eu, ne timeam salutandi sit, vix no labore iudicabit. Vis sale congue mnesarchum in, pro saepe legere maluisset an. Ius eu omnium verear lucilius. Ius sonet persecuti ea, nec eu tollit detraxit. Mel no habeo copiosae atomorum, vix vulputate rationibus ex, ne vix adhuc singulis tacimates. Et sea legimus meliore platonem. Has ad quas inani iusto.</p>
 				    			<p>
 				    			Lorem ipsum dolor sit amet, vim exerci feugait propriae eu, ne timeam salutandi sit, vix no labore iudicabit. Vis sale congue mnesarchum in, pro saepe legere maluisset an. Ius eu omnium verear lucilius. Ius sonet persecuti ea, nec eu tollit detraxit. Mel no habeo copiosae atomorum, vix vulputate rationibus ex, ne vix adhuc singulis tacimates. Et sea legimus meliore platonem. Has ad quas inani iusto.</p>
 <p>
@@ -91,6 +95,15 @@ Ferri civibus per at, ad vim inermis detraxit. Id ius facer dicant. Ubique aperi
 Usu mundi adipiscing te, his ancillae prodesset ei, porro utamur facilis ei sea. At quis quando imperdiet vim, eum cu omnesque intellegam, an quo alienum sapientem. Dicant doctus euismod eum no, eam habeo justo at. No quod omnesque duo, eam an agam etiam soleat. Cu aeque bonorum nusquam vim, ut sea alia scaevola, no simul scripserit interpretaris eam.
 </p><p>
 Corpora senserit suscipiantur ut vim, rebum consequuntur no has. Eum exerci pertinax in, sed an erat solet temporibus, vix at quis purto gubergren. His legere commune an, at velit putant sententiae eam. Tation homero partiendo qui id, te meis nostrud recteque mel, est liber noluisse pertinacia ne. Sit nominavi adipiscing dissentiet ad.
+</p>
+<p>
+Corpora senserit suscipiantur ut vim, rebum consequuntur no has. Eum exerci pertinax in, sed an erat solet temporibus, vix at quis purto gubergren. His legere commune an, at velit putant sententiae eam. Tation homero partiendo qui id, te meis nostrud recteque mel, est liber noluisse pertinacia ne. Sit nominavi adipiscing dissentiet ad.vv
+</p>
+<p>
+Corpora senserit suscipiantur ut vim, rebum consequuntur no has. Eum exerci pertinax in, sed an erat solet temporibus, vix at quis purto gubergren. His legere commune an, at velit putant sententiae eam. Tation homero partiendo qui id, te meis nostrud recteque mel, est liber noluisse pertinacia ne. Sit nominavi adipiscing dissentiet ad.vv
+</p>
+<p>
+Corpora senserit suscipiantur ut vim, rebum consequuntur no has. Eum exerci pertinax in, sed an erat solet temporibus, vix at quis purto gubergren. His legere commune an, at velit putant sententiae eam. Tation homero partiendo qui id, te meis nostrud recteque mel, est liber noluisse pertinacia ne. Sit nominavi adipiscing dissentiet ad.vv
 </p>
 				    		</div>
 				    		</div>
@@ -175,7 +188,9 @@ Corpora senserit suscipiantur ut vim, rebum consequuntur no has. Eum exerci pert
   var deleteLog = false;
   $(document).ready(function() {
   	$('#pagepiling').pagepiling({
-  		sectionsColor: ['#262626', '#fc5457', '#2C3E50', '#51bec4']
+  		sectionsColor: ['#262626', '#fc5457', '#2C3E50', '#51bec4'],
+  		normalScrollElements:'.bigchunk',
+  		normalScrollElementTouchThreshold: 3
   	});
   });
   </script>

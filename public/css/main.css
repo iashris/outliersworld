@@ -39,7 +39,24 @@ body {
 	margin-top: -90vh!important;
 }
 
+.field{
+	background: #f65756;
+	padding: 4px;
+}
+.bigchunk{
+	overflow-y: auto;
+	max-height: 50vh;
+}
 
+
+
+#section2{
+	overflow: hidden;
+}
+.vidoverlay>p{
+	font-size: 1.3em;
+	font-family: 'Poppins';
+}
 #continue{
 	visibility: hidden;
 }
