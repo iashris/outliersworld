@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
-		<script src="js/processing.js" type="text/javascript"></script>
-		<script type="text/javascript">
+<script src="js/processing.js" type="text/javascript"></script>
+<script type="text/javascript">
 // convenience function to get the id attribute of generated sketch html element
 function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 </script>
@@ -50,9 +50,9 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 	</div>
 </div> --}}
 <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
-	<link rel="stylesheet" type="text/css" href="css/examples.css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/examples.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
 
 </head>
 <body>
@@ -60,75 +60,99 @@ function getProcessingSketchId () { return 'PGSandTrickleDown'; }
 
 
 	<div id="pagepiling">
-	    <div class="section" id="section1">
-	    	<h1>Page 1</h1>
-			<p>Kuch kuch</p>
-	    </div>
-	    <div class="section" id="section2">
-	    	<div class="intro">
-	    		<h1>Page 2</h1>
-				<p>Yahan something more.</p>
-	    	</div>
-	    </div>
-	    <div class="section" id="section4">
-	    	<div class="intro">
-	    		<h1>Page 3</h1>
-				<p>Kuch aur</p>
-	    	</div>
-	    </div>
-	</div>
+		<div class="section" id="section1">
+			<div class="vidoverlay">
+				<h1 class='pramukh'>1.3 Billion <br><span id="swap-text">People</span></h1>
+			</div>
+			<div class="cover-image-wrapper">
+				<video autoplay loop muted playsinline id="banvid" src="res/Outliers_Website_Footage.mp4" type="video/mp4">
+				</video>
+			</div>
+						<script type="text/javascript">
+					var playPromise = document.getElementById('banvid').play();
 
-</body>
-</html>
+					if (playPromise !== undefined) {
+						playPromise.then(_ => {
+				      // Automatic playback started!
+				      // Show playing UI.
+				      console.log('ind');
+				      $('.cover-image-wrapper').css({'width':'70%'});
 
 
+				  })
+				   .catch(error => {
+				      // Auto-play was prevented
+				      // Show paused UI.
+				  });
+				    		}
+				    		var i=0;
 
-<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
-<script>
+				    		var wordlist=['people','possibilities','ideas','opportunities','minds'];
+				    		var $text=$('#swap-text');
+				  function changeword(){
+				  	i++;
+				  	var pickedword=wordlist[i%wordlist.length];
+				  	$text.fadeOut(function() {
+					  $(this).text(pickedword);
+					}).fadeIn();
+				  }
+				  if(!timer){
+				  var timer=setInterval(changeword,2500);
+				}
+				</script>
+
+		</div>
+				    	<div class="section" id="section2">
+				    		<div class="intro">
+				    			<h1>Page 2</h1>
+				    			<p>Yahan something more.</p>
+				    		</div>
+				    	</div>
+				    	<div class="section" id="section4">
+				    		<div class="intro">
+				    			<h1>Page 3</h1>
+				    			<p>Kuch aur</p>
+				    		</div>
+				    	</div>
+				    </div>
+
+				</body>
+				</html>
+
+
+
+
+				<script>
   // Initialize Firebase
- $('li').removeClass('active');
+  $('li').removeClass('active');
   $('.vision').addClass('active');
+
+
+
+
+
+
   $(document).ready(function(){
   	$(".section").each(function(i) {
-  $(this).delay(i*500).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+  		$(this).delay(i*500).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+  	});
+
+				    		// Show loading animation.
+
+
+
 });
 
-  // 	 var config = {
-  //   apiKey: "AIzaSyAZ6D3J4QAplsYqrc8MWjBMAFqnGGpLUPA",
-  //   authDomain: "outliers-7a244.firebaseapp.com",
-  //   databaseURL: "https://outliers-7a244.firebaseio.com",
-  //   projectId: "outliers-7a244",
-  //   storageBucket: "outliers-7a244.appspot.com",
-  //   messagingSenderId: "820859289787"
-  // };
-  // firebase.initializeApp(config);
-  // var database=firebase.database();
-  // var ref=database.ref('registration');
-  // 	$('.btn').on('click',function(){
-  // 		var emailAddress=$('#emailAddress').val();
-  // 		var message=$('#message').val();
-  // 		var data={
-  // 			'email':emailAddress,
-  // 			'message':message,
-  // 			'time':new Date()
-  // 		}
 
-  // 		if(emailAddress.length>5)ref.push(data);
-  // 		$('.formsection').fadeOut(function() {
-  // 			$(this).text("Thank You!").fadeIn();
-		// });
-  // 	});
+  </script>
+
+  <script type="text/javascript">
+  var deleteLog = false;
+  $(document).ready(function() {
+  	$('#pagepiling').pagepiling({
+  		sectionsColor: ['#262626', '#2ebe21', '#2C3E50', '#51bec4']
+  	});
   });
-
-
-</script>
-<script type="text/javascript">
-		var deleteLog = false;
-		$(document).ready(function() {
-	    	$('#pagepiling').pagepiling({
-			    sectionsColor: ['#262626', '#2ebe21', '#2C3E50', '#51bec4']
-			});
-	    });
-    </script>
+  </script>
 
 

@@ -75,7 +75,7 @@ html, body {
     display: block;
     width: 14px;
     height: 13px;
-    margin: 7px;
+    margin: 40px 20px;
     position:relative;
 }
 .pp-slidesNav li {
@@ -93,7 +93,7 @@ html, body {
 }
 #pp-nav li .active span,
 .pp-slidesNav .active span {
-    background: #333;
+    background: var(--highlight);
 }
 #pp-nav span,
 .pp-slidesNav span {
@@ -101,8 +101,7 @@ html, body {
     left: 2px;
     width: 8px;
     height: 8px;
-    border: 1px solid #000;
-    background: rgba(0, 0, 0, 0);
+    background: #333;
     border-radius: 50%;
     position: absolute;
     z-index: 1;

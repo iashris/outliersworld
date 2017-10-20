@@ -177,10 +177,117 @@ margin-top: 0;
 .section{
 	font-family: 'Playfair Display'!important;
 }
+video{
+	opacity: 0.6;
+	height: 100%;
+	overflow: hidden;
+	    min-width: 100%;
+    min-height: 100%;
+    opacity: .4;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    display: inline-block;
+    vertical-align: baseline;
+    mix-blend-mode: overlay;
+}
+@-webkit-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@-moz-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+
+.navbar-toggle{
+	margin-top: 30px;
+}
+.vidoverlay{
+	position: absolute;
+	top:60%;
+	left:10%;
+	z-index: 1;
+}
+.cover-image-wrapper {
+    width: 40%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    overflow: hidden;
+    transition: 1s all;
+}
+.vidzoom{
+	width: 70%;
+	height: 70%;
+}
+ul.nav>li{
+	background: #333;
+}
+.pramukh{
+	font-family: 'Poppins';
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 3em;
+}
 @media (min-width: 767px){
     .canvas{
         visibility: visible;
     }
+    .pramukh{
+	font-size: 4em;
+}
     .upwards{
     	opacity: 1.0;
     	margin-top: -60vh!important;
@@ -188,6 +295,9 @@ margin-top: 0;
 .centered{
 	width: 60vw;
 	height:40vh;
+}
+ul.nav>li{
+	background: none;
 }
 .borders > *.bottom {
     height: 40px;
