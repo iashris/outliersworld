@@ -166,12 +166,13 @@ margin-top: 0;
     width: 100px;
     border-bottom: 3px solid #fff;
     cursor: pointer;
-    opacity: 0;
+    opacity: 0.2;
 
 
 }
 #footer:hover{
     border-bottom: 3px solid white;
+    opacity: 1;
 }
 
 .section{
