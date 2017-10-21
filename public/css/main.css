@@ -44,18 +44,28 @@ body {
 	padding: 4px;
 }
 .bigchunk{
-	overflow-y: auto;
-	max-height: 50vh;
+	max-height: 80vh;
 }
 
 
-
+.bigchunk>p{
+	display: block;
+	margin-top: 10px;
+		text-align: justify;
+}
+.bigchunk>p>.highlighted{
+	background: white;
+	color:#ff5756;
+	padding-left:5px;
+	padding-right: 5px;
+}
 #section2{
 	overflow: hidden;
 }
 .vidoverlay>p{
 	font-size: 1.3em;
 	font-family: 'Poppins';
+
 }
 #continue{
 	visibility: hidden;
@@ -129,7 +139,22 @@ cursor: pointer;
    .canvas{
         visibility: hidden;
     }
-
+#page {
+    display: none;
+}
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.5);
+    background-image: url("http://i.stack.imgur.com/MnyxU.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
 audio{
 	visibility: hidden;
 }

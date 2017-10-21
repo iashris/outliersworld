@@ -34,13 +34,12 @@ int pictures = names.length;
 void setup()
 {
 
-  size(460, 660);
+  size(480, 600);
   frameRate(60);
   maxpixel = height * width;
   selectPicture(0);
   textSize (14);
   noSmooth();
-  b1 = {#2E112D,#014141,#2C3E50,#432C51,color(52,19,47)};
 }
 void setting()
 {
@@ -51,7 +50,7 @@ void draw()
 {
 
 
-  background(b1[picIndex%5]);
+  background(#2C3E50);
   loadPixels();
   int offset = 0;
   float speedFactor = 10 + (mouseY * 16.0) / height;
@@ -80,7 +79,7 @@ void draw()
   fill(255,255,255,190);
   textSize(9);
   //textAlign(CENTER);
-  text("India's Outliers | "+namesofppl[picIndex],35,height-80);
+  text("India's Outliers | "+namesofppl[picIndex],25,height-30);
 }
 //--------------------------------------
 void restart()

@@ -53,19 +53,17 @@ margin-top: 8%;
 	background: none!important;
 	color:white!important;
 }
-
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: white;
+}
 		canvas {
 			height: 100%;
 			position: fixed;
-			top:40px;
 			bottom: 0;
 			z-index: 1;
-			left: 0px;
+			right: 0px;
 			display: block;
 			outline: 0px;
-			margin-left:20px;
-			margin-bottom: 1.5em;
-			display: none;
 		}
 
 

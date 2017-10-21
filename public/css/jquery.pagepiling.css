@@ -39,7 +39,7 @@ html, body {
     opacity: 1;
 }
 #pp-nav.right {
-    right: 17px;
+    right: -5px;
 }
 #pp-nav.left {
     left: 17px;
@@ -49,7 +49,8 @@ html, body {
 }
 .pp-tableCell {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
+    border-spacing: 8vh;
     width: 100%;
     height: 100%;
 }
@@ -75,7 +76,7 @@ html, body {
     display: block;
     width: 14px;
     height: 13px;
-    margin: 40px 20px;
+    margin: 20px 20px;
     position:relative;
 }
 .pp-slidesNav li {
