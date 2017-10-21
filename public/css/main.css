@@ -5,14 +5,11 @@ html,body{
 	border:30px 40px;
 }
 html {
-    overflow: hidden;
-    height: 100%;
+
+
     font-family:'Playfair Display';
 }
-body {
-    height: 100%;
-    overflow: auto;
-}
+
 .word{
   opacity: 0;
   position: relative;
@@ -44,13 +41,11 @@ body {
 	padding: 4px;
 }
 .bigchunk{
-	max-height: 80vh;
 	z-index: 3;
+	margin-top:5vh;
 }
 
-.visionimg{
-	display: none;
-}
+
 .bigchunk>p{
 	display: block;
 	margin-top: 10px;
@@ -58,8 +53,11 @@ body {
 }
 ul>li>p{
 	display: block;
-	margin-top: 10px;
+	margin-top: 5px;
 	text-align: justify;
+}
+ul>li{
+	display: list-item;
 }
 .bigchunk>p>.highlighted{
 	background: white;
@@ -67,9 +65,7 @@ ul>li>p{
 	padding-left:5px;
 	padding-right: 5px;
 }
-#section2{
-	overflow: hidden;
-}
+
 .vidoverlay>p{
 	font-size: 1.3em;
 	font-family: 'Poppins';
@@ -139,9 +135,7 @@ cursor: pointer;
 
     margin: auto;
 }
-.section{
-	height: 110%;
-}
+
 .borders > *.right {
     top: 0;
     right: 0;
@@ -158,19 +152,7 @@ cursor: pointer;
 #page {
     display: none;
 }
-#loading {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(192, 192, 192, 0.5);
-    background-image: url("http://i.stack.imgur.com/MnyxU.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-}
+
 audio{
 	visibility: hidden;
 }
@@ -404,10 +386,38 @@ ul.nav>li{
 	font-family: 'Poppins';
 	font-weight: 800;
 	text-transform: uppercase;
-	font-size: 3em;
+	font-size: 2.4em;
 	display: block;
 }
+#loading{
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	background-color: #262626;
+	height: 100vh;
+	width: 100vw;
+	z-index: 200;
+	text-align: center;
+}
+.loadlog{
+	 display: block;
+  position: absolute;
+  top:50%; left:50%;   /*positing top left corner of image to center*/
+  transform: translate(-50%, -50%); /* move left and up for 1/2 of image */
+  width: 40%;
+}
 @media (min-width: 767px){
+html {
+    overflow: hidden;
+    height: 100%;
+    font-family:'Playfair Display';
+}
+body {
+    height: 100%;
+    overflow: auto;
+}
     .canvas{
         visibility: visible;
     }
@@ -426,7 +436,14 @@ ul.nav>li{
 ul.nav>li{
 	background: none;
 }
-
+.center{
+	text-align: center;
+}
+ul>li>p{
+	display: block;
+	margin-top: 10px;
+	text-align: justify;
+}
 .visionimg{
 	display: block;
 }

@@ -26,16 +26,7 @@ right:0;
 .navbar-default .navbar-nav>li>a:hover {
     color: white;
 }
-html {
-    overflow: hidden;
-    height: 100%;
-}
 
-body {
-    height: 100%;
-    overflow: auto;
-    --highlight:white;;
-}
 .imlo{
 height: 200%;
 margin-top: 8%;

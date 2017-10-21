@@ -22,11 +22,7 @@ address,caption,cite,code,dfn,em,strong,th,var {
 strong{
 	font-weight: bold;
 }
-ol,ul {
-    list-style: none;
-    margin:0;
-    padding:0;
-}
+
 caption,th {
     text-align: left;
 
@@ -107,6 +103,9 @@ body{
 
 /* Section 1
  * --------------------------------------- */
+ #section1{
+ 	height: 100vh;
+ }
 #section1 h1{
 	color: white;
 }

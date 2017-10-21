@@ -1,12 +1,19 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
-  <script type="text/javascript">
-  var deleteLog = false;
-  $(document).ready(function() {
-  	$('#pagepiling').pagepiling({
-  		sectionsColor: ['#262626', '#2C3E50','#fc5457', '#2C3E50', '#51bec4','#51bec4','#51bec4']
+<script type="text/javascript">
+var deleteLog = false;
+$(document).ready(function() {
+	setTimeout(function(){
+		$( "#loading" ).fadeOut( "slow", function() {
+    // $("loading").remove();
+});
+	},1200);
+
+  	if($(window).width()>768)$('#pagepiling').pagepiling({
+  	sectionsColor: ['#262626', '#2C3E50','#fc5457', '#2C3E50', '#51bec4','#51bec4','#51bec4'],
+  	direction:'horizontal'
   	});
   });
-  </script>
+</script>
 <script src="js/processing.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -24,7 +31,7 @@ function getProcessingSketchId2 () { return 'kolam'; }
 </head>
 <body>
 
-
+	<div id="loading"><img src="img/logo2.png" class="img-responsive loadlog"></div>
 
 	<div id="pagepiling">
 		<div class="section" id="section1">
@@ -37,13 +44,13 @@ function getProcessingSketchId2 () { return 'kolam'; }
 				</video>
 			</div>
 			<div id="section10" class="scrollbtn">
-  <a href="#section2"><span></span></a>
+				<a href="#section2"><span></span></a>
 			</div>
-						<script type="text/javascript">
-					var playPromise = document.getElementById('banvid').play();
+			<script type="text/javascript">
+			var playPromise = document.getElementById('banvid').play();
 
-					if (playPromise !== undefined) {
-						playPromise.then(_ => {
+			if (playPromise !== undefined) {
+				playPromise.then(_ => {
 				      // Automatic playback started!
 				      // Show playing UI.
 				      console.log('ind');
@@ -51,144 +58,146 @@ function getProcessingSketchId2 () { return 'kolam'; }
 
 
 				  })
-				   .catch(error => {
+				.catch(error => {
 				      // Auto-play was prevented
 				      // Show paused UI.
 				  });
-				    		}
-				    		var i=0;
+			}
+			var i=0;
 
-				    		var wordlist=['people','possibilities','multiverses','innovators','opportunities','ideators'];
-				    		var $text=$('#swap-text');
-				  function changeword(){
-				  	i++;
-				  	var pickedword=wordlist[i%wordlist.length];
-				  	$text.fadeOut(function() {
-					  $(this).text(pickedword);
-					}).fadeIn();
-				  }
-				  if(!timer){
-				  var timer=setInterval(changeword,2500);
-				}
-				</script>
+			var wordlist=['people','possibilities','multiverses','innovators','opportunities','ideators'];
+			var $text=$('#swap-text');
+			function changeword(){
+				i++;
+				var pickedword=wordlist[i%wordlist.length];
+				$text.fadeOut(function() {
+					$(this).text(pickedword);
+				}).fadeIn();
+			}
+			if(!timer){
+				var timer=setInterval(changeword,2500);
+			}
+			</script>
 
 		</div>
-				    	<div class="section" id="section2">
-				    		<div class="container">
-				    		<div class="col-xs-12 col-md-5 bigchunk" id="scroll-4">
-				    			<h2>WHO ARE OUTLIERS ?</h2>
-				    			<p>
-				    			In every generation, there exist few people who stand out from the rest. They are the ones who think differently. They battle their deepest fears to do what they feel is the need of the hour. Where others grudge with cynicism, they silently work on building a better future with optimism. </span></p>
-<p>
-In the year 1947, when our country was reborn, the world had extremely low hopes. Colonization had systematically reduced India from one of the richest nations in the world to one of the poorest ones. Nobody expected us to be able to run a democracy.</p>
-				    			<p>
-				    			We were fortunate to have with us visionary minds that charted out a plan to get out of that mess. They envisioned today’s India with optimism inspite of having every reason to be pessimistic and ridicule the then present conditions.
-				    			It is because of their efforts that we are today a shining democracy, a space power, a nuclear power, an IT superpower, and a nation with one of the highest GDP growth rates in the world. </p>
-	    		</div>
+		<div class="section" id="section2">
+			<div class="container">
+				<div class="col-xs-12 col-md-5 bigchunk" id="scroll-4">
+					<h2>WHO ARE OUTLIERS ?</h2>
+					<p>
+					In every generation, there exist few people who stand out from the rest. They are the ones who think differently. They battle their deepest fears to do what they feel is the need of the hour. Where others grudge with cynicism, they silently work on building a better future with optimism. </span></p>
+					<p>
+					In the year 1947, when our country was reborn, the world had extremely low hopes. Colonization had systematically reduced India from one of the richest nations in the world to one of the poorest ones. Nobody expected us to be able to run a democracy.</p>
+					<p>
+						We were fortunate to have with us visionary minds that charted out a plan to get out of that mess. They envisioned today’s India with optimism inspite of having every reason to be pessimistic and ridicule the then present conditions.
+					It is because of their efforts that we are today a shining democracy, a space power, a nuclear power, an IT superpower, and a nation with one of the highest GDP growth rates in the world. </p>
+				</div>
+				<div class="col-md-6">
+					<div id="content">
+						<div>
+							<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde"
+							width="100%" height="100%">
+							<p>Your browser does not support the canvas tag.</p>
+							<!-- Note: you can put any alternative content here. -->
+						</canvas>
+						<noscript>
+							<p>JavaScript is required to view the contents of this page.</p>
+						</noscript>
+						</div><!--inner div-->
+					</div><!--content-->
+				</div><!--col-md-6-->
+			</div><!--container-->
+		</div><!--section-->
+
+	<div class="section" id="section3">
+		<div class="container">
+			<div class="col-xs-12 col-md-5 bigchunk">
+				<h2>WHY WE'RE HERE</h2>
+				<p>Swami Vivekananda back in 1880 had said <span class="quote">"Give me 100 energetic young men and I shall transform India"</span></p>
+				<p>The youth of our country is insanely talented. The youth is in search for a purpose today. Nobody however seems to have a plan for us. A nation that once reached self actualisation is now contented being a mere market for the global economy.</p>
+				<p>What India has to offer to the world is unparalleled. If managed well, we can set an example of being a nation that is not interested in conquering others but realizing the fullest potential of being a human.</p>
+				<p> Outliers’ goal is to pursue action-driven research, implement projects that combine technology, design and spirituality creatively. In the process, we want to grow ventures, empower individuals and ultimately understand our own nation better.</p>
 
 
+			</div>
+			<div class="col-md-6">
+				<div id="content">
+					<div>
+						<canvas id="kolam" data-processing-sources="res/kolam.pde"
+						width="100%" height="100%">
+						<p>Your browser does not support the canvas tag.</p>
+						<!-- Note: you can put any alternative content here. -->
+					</canvas>
+					<noscript>
+						<p>JavaScript is required to view the contents of this page.</p>
+					</noscript>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="section" id="section4">
+	<div class="container">
+		<div class="col-xs-12 col-md-6 bigchunk">
+			<h2>THE "WHY-HOW-WHAT" MODEL</h2>
+			<p>Innovation is fun because there are no defined rules. But with our past experience in doing projects, we find helpful to use a model we like to call the 'Why-How-What' model.</p>
+			<ul>
+				<li>
+					<p>Many of us have wonderful skills but we lack the core reason of why we do what we do, i.e. the vision. Having a clear ambitious vision keeps one on track and not lose their focus. Figuring out the vision gives you the answer to WHY you are doing something.</p></li>
+					<li><p>To translate the vision into implementable actions, we need to study people's needs. This gives us an idea of how to prioritize our goals and thus answers the HOW part.</p></li>
+					<li><p>In order to finally achieve your goals, you need skills to actually build what you envision. These tools give us answer to WHAT we have to build.</p></li>
+				</ul>
+				<p>In our case, India's long standing culture of Spirituality will guide us in our Vision, Design will help us understand the Needs and we will use Technology to implement the projects.</p>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<img style="margin-top:5vh" class="visionimg img-responsive" src="img/vision.png">
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section5">
+		<div class="container">
+			<div class="col-xs-12 col-md-6 bigchunk">
+				<h1>FOCUS</h1>
+				<p>Our identify the areas of our nation and culture that require innovation and accomplish projects to focus on these fields.</p>
 
+				<ul>
+					<li><p>Build a team of 100 young outliers from all over the country</p></li>
+					<li><p>Create an ecosystem for grassroot innovation</p></li>
+					<li><p>Cement India's democracy via citizen participation.</p></li>
+					<li><p>Create products inspired by India's rich cultural heritage.</p></li>
+					<li><p>Prepare for skill focused learning systems</p></li>
+					<li><p>Illustrate texts on spirituality and ancient Indian wisdom</p></li>
+					<li><p>Research on user behavior and psychology to understand trust in society</p></li>
+					<li><p>Use data visualizations to highlight social issues of the country</p></li>
+					<li><p>Formulate products and design systems to make our social systems robust</p></li>
+					<li><p>Fasten digitilization by empowering children with programming and design skills</p></li>
+					<li><p>Organize conferences and workshops for action driven change in the country</p></li>
+				</ul>
 
+			</div>
+			<div class="col-xs-12 col-md-6">
 
-	    		<div class="col-md-6">
-<div id="content">
-		<div>
-			<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde"
-			width="100%" height="100%">
-			<p>Your browser does not support the canvas tag.</p>
-			<!-- Note: you can put any alternative content here. -->
-		</canvas>
-		<noscript>
-			<p>JavaScript is required to view the contents of this page.</p>
-		</noscript>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section6">
+		<div class="container">
+			<div class="col-xs-12 col-md-12 center bigchunk">
+				<h1>CONNECT</h1>
+				<p>In order to implement these goals in a meaningful way, we will be working </p>
+			</div>
+
+		</div>
 	</div>
 </div>
 
-
-	    		</div>
-				    		</div>
-
-
-
-				    	</div>
-				    	<div class="section" id="section3">
-				    		<div class="container">
-				    			<div class="col-xs-12 col-md-5 bigchunk">
-				    			<h2>WHY WE'RE HERE</h2>
-				    			<p>Swami Vivekananda back in 1880 had said <span class="quote">"Give me 100 energetic young men and I shall transform India"</span></p>
-				    			<p>The youth of our country is insanely talented. The youth is in search for a purpose today. Nobody however seems to have a plan for us. A nation that once reached self actualisation is now contented being a mere market for the global economy.</p>
-				    			<p>What India has to offer to the world is unparalleled. If managed well, we can set an example of being a nation that is not interested in conquering others but realizing the fullest potential of being a human.</p>
-				    			<p> Outliers’ goal is to pursue action-driven research, implement projects that combine technology, design and spirituality creatively. In the process, we want to grow ventures, empower individuals and ultimately understand our own nation better.</p>
-
-
-				    		</div>
-	    		<div class="col-md-6">
-<div id="content">
-		<div>
-			<canvas id="kolam" data-processing-sources="res/kolam.pde"
-			width="100%" height="100%">
-			<p>Your browser does not support the canvas tag.</p>
-			<!-- Note: you can put any alternative content here. -->
-		</canvas>
-		<noscript>
-			<p>JavaScript is required to view the contents of this page.</p>
-		</noscript>
-	</div>
-</div>
-
-
-	    		</div>
-				    		</div>
-				    	</div>
-				    	<div class="section" id="section4">
-				    		<div class="container">
-				    			<div class="col-xs-12 col-md-6 bigchunk">
-				    			<h2>THE "WHY-HOW-WHAT" MODEL</h2>
-				    			<p>Innovation is fun because there are no defined rules. But with our past experience in doing projects, we find helpful to use a model we like to call the 'Why-How-What' model.</p>
-				    			<ul>
-				    			<li>
-				    			<p>Many of us have wonderful skills but we lack the core reason of why we do what we do, i.e. the vision. Having a clear ambitious vision keeps one on track and not lose their focus. Figuring out the vision gives you the answer to WHY you are doing something.</p></li>
-				    			<li><p>To translate the vision into implementable actions, we need to study people's needs. This gives us an idea of how to prioritize our goals and thus answers the HOW part.</p></li>
-				    			<li><p>In order to finally achieve your goals, you need skills to actually build what you envision. These tools give us answer to WHAT we have to build.</p></li>
-				    		</ul>
-				    		<p>In our case, India's long standing culture of Spirituality will guide us in our Vision, Design will help us understand the Needs and we will use Technology to implement the projects.</p>
-				    		</div>
-				    		<div class="col-xs-12 col-md-6">
-				    			<img style="margin-top:5vh" class="visionimg img-responsive" src="img/vision.png">
-				    		</div>
-				    		</div>
-				    	</div>
-				    	<div class="section" id="section5">
-				    		<div class="container">
-				    			<div class="col-xs-12 col-md-6">
-				    			<h1>PLAN</h1>
-				    			<p>Yahan something more.</p>
-				    		</div>
-				    		<div class="col-xs-12 col-md-6">
-				    			Dummy text goes here
-				    		</div>
-				    		</div>
-				    	</div>
-				    	<div class="section" id="section6">
-				    		<div class="container">
-				    			<div class="col-xs-12 col-md-6">
-				    			<h1>CONNECT</h1>
-				    			<p>Yahan something more.</p>
-				    		</div>
-				    		<div class="col-xs-12 col-md-6">
-				    			Dummy text goes here
-				    		</div>
-				    		</div>
-				    	</div>
-				    </div>
-
-				</body>
-				</html>
+</body>
+</html>
 
 
 
 
-				<script>
+<script>
   // Initialize Firebase
   $('li').removeClass('active');
   $('.vision').addClass('active');
@@ -207,7 +216,7 @@ In the year 1947, when our country was reborn, the world had extremely low hopes
 
 
 
-});
+				    	});
 
 
   </script>

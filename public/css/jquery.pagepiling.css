@@ -7,7 +7,7 @@
  * Copyright (C) 2016 alvarotrigo.com - A project by Alvaro Trigo
  */
 html, body {
-    overflow:hidden;
+
     margin:0;
     padding:0;
 
@@ -50,7 +50,7 @@ html, body {
 .pp-tableCell {
     display: table-cell;
     vertical-align: top;
-    border-spacing: 8vh;
+    border-spacing: 11vh;
     width: 100%;
     height: 100%;
 }
@@ -76,7 +76,7 @@ html, body {
     display: block;
     width: 14px;
     height: 13px;
-    margin: 20px 20px;
+    margin: 20px 6px;
     position:relative;
 }
 .pp-slidesNav li {
@@ -99,10 +99,10 @@ html, body {
 #pp-nav span,
 .pp-slidesNav span {
     top: 2px;
-    left: 2px;
+    left: -2px;
     width: 8px;
     height: 8px;
-    background: #333;
+    background: rgba(255,255,255,0.2);
     border-radius: 50%;
     position: absolute;
     z-index: 1;
