@@ -94,7 +94,7 @@ html, body {
 }
 #pp-nav li .active span,
 .pp-slidesNav .active span {
-    background: var(--highlight);
+    background: white;
 }
 #pp-nav span,
 .pp-slidesNav span {
