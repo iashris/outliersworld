@@ -148,9 +148,7 @@ body{
 
 /* Section 4
  * --------------------------------------- */
-#section4 p{
-	opacity: 0.6;
-}
+
 
 /* Overwriting fullPage.js tooltip color
 * --------------------------------------- */
