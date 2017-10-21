@@ -2,7 +2,7 @@
   <script type="text/javascript">
   var deleteLog = false;
   $(document).ready(function() {
-  	$('#pagepiling').pagepiling({
+  	if($(window).width() > 768)$('#pagepiling').pagepiling({
   		sectionsColor: ['#262626', '#2C3E50','#fc5457', '#2C3E50', '#51bec4','#51bec4','#51bec4']
   	});
   });
@@ -12,20 +12,9 @@
 <script type="text/javascript">
 // convenience function to get the id attribute of generated sketch html element
 function getProcessingSketchId () { return 'PGSandTrickleDown'; }
+function getProcessingSketchId2 () { return 'kolam'; }
 </script>
 
-{{!-- 	<div id="content">
-		<div>
-			<canvas id="PGSandTrickleDown" data-processing-sources="res/PG_Sand_Trickle_Down.pde"
-			width="100%" height="100%">
-			<p>Your browser does not support the canvas tag.</p>
-			<!-- Note: you can put any alternative content here. -->
-		</canvas>
-		<noscript>
-			<p>JavaScript is required to view the contents of this page.</p>
-		</noscript>
-	</div>
-</div> --}}
 
 <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
 <link rel="stylesheet" type="text/css" href="css/examples.css" />
@@ -124,13 +113,31 @@ In the year 1947, when our country was reborn, the world had extremely low hopes
 				    	</div>
 				    	<div class="section" id="section3">
 				    		<div class="container">
-				    			<div class="col-xs-12 col-md-6">
+				    			<div class="col-xs-12 col-md-5 bigchunk">
 				    			<h2>WHY WE'RE HERE</h2>
-				    			<p>‘Give me 100 dedicated indians and I will transform India’</p>
+				    			<p>Swami Vivekananda back in 1880 had said <span class="quote">"Give me 100 energetic young men and I shall transform India"</span></p>
+				    			<p>The youth of our country is insanely talented. The youth is in search for a purpose today. Nobody however seems to have a plan for us. A nation that once reached self actualisation is now contented being a mere market for the global economy.</p>
+				    			<p>What India has to offer to the world is unparalleled. If managed well, we can set an example of being a nation that is not interested in conquering others but realizing the fullest potential of being a human.</p>
+				    			<p> Outliers’ goal is to pursue action-driven research, implement projects that combine technology, design and spirituality creatively. In the process, we want to grow ventures, empower individuals and ultimately understand our own nation better.</p>
+
+
 				    		</div>
-				    		<div class="col-xs-12 col-md-6">
-				    			Dummy text goes here
-				    		</div>
+	    		<div class="col-md-6">
+<div id="content">
+		<div>
+			<canvas id="kolam" data-processing-sources="res/kolam.pde"
+			width="100%" height="100%">
+			<p>Your browser does not support the canvas tag.</p>
+			<!-- Note: you can put any alternative content here. -->
+		</canvas>
+		<noscript>
+			<p>JavaScript is required to view the contents of this page.</p>
+		</noscript>
+	</div>
+</div>
+
+
+	    		</div>
 				    		</div>
 				    	</div>
 				    	<div class="section" id="section4">

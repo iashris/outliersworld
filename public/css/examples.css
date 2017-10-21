@@ -124,29 +124,7 @@ body{
 #section2 p{
 	z-index: 3;
 }
-#section2 p{
-	opacity: 0.8;
-}
 
-#section2 #colors{
-	right: 60px;
-	bottom: 0;
-	position: absolute;
-	height: 413px;
-	width: 258px;
-	background-image: url(imgs/colors.gif);
-	background-repeat: no-repeat;
-}
-
-/* Section 3
- * --------------------------------------- */
-#section3 #colors{
-	left: 60px;
-	bottom: 0;
-}
-#section3 p{
-	color: #757575;
-}
 
 #colors2,
 #colors3{
