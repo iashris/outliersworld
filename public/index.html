@@ -22,10 +22,14 @@ canvas {
 <body>
 	<div id="p5canvas"></div>
 	<div id="animdiv"></div>
-	<div class="clickableintro centered">
-		<img src="img/logo2.png" class="logo2">
+	<img src="img/logo2.png" class="logoimg"><br>
+	<div class="col-xs-12 col-md-6 col-md-offset-2 centered">
+
+<h3 style="color:white">Building A Nation — One Project At A Time</h3>
+<p>We're showcasing India's most innovative tech and design projects to inspire students to pursue their own ideas.</p>
+<span class="proceed">Proceed</span>
 	</div>
-	<div id="introsection" class="centered">
+	<div id="introsection" class="actualcentered">
 
 		<audio id="audiofile" src="res/speech.mp3" controls></audio><br>
 		<div id="subtitles"></div>
@@ -34,10 +38,11 @@ canvas {
 			<span class="Outlier_Description">11th President Of India & An Outlier</span>
 		</div>
 	</div>
-
+<div style="text-align: center">
 	<div id="footer">
 		Skip Intro
 	</div>
+</div>
 
 </body>
 <script
@@ -47,7 +52,7 @@ crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
 <script>
 
-	$('.logo2').css({marginTop: '-=7vh'}).animate({opacity: 0.75});
+
 	var audioPlayer = document.getElementById("audiofile");
 	var subtitles = document.getElementById("subtitles");
 	var theta=0;
@@ -138,12 +143,12 @@ $(child).addClass('appeared');
 	$('#footer').click(function(){
 		window.location='/home';
 	});
-	$('.logo2').click(function(){
+	$('.proceed').click(function(){
 
 		radiustrig=true;
     //$(this).fadeOut("slow");
     //$(this).css({marginTop: '-=30vh'});
-    $(this).addClass('upwards');
+    $('.centered').addClass('upwards');
 
     $('#footer').css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
     setTimeout(function(){audioPlayer.play();},1000);
