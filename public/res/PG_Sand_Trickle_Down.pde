@@ -1,8 +1,8 @@
 final boolean AndroidMode = false;
 boolean debug = false;
 boolean showFPS = false;
-int num = 20000;
-int usedParticles = 3000;
+int num = 30000;
+int usedParticles = 4000;
 int[] x = new int[num];
 int[] y = new int[num];
 int picIndex, maxpixel;

@@ -3,14 +3,8 @@
 <script type="text/javascript">
 var deleteLog = false;
 $(document).ready(function() {
-	setTimeout(function(){
-		$( "#loading" ).fadeOut( "fast", function() {
-    // $("loading").remove();
-});
-	},900);
-
   	if($(window).width()>768)$('#pagepiling').pagepiling({
-  	sectionsColor: ['#262626', '#2C3E50','#fc5457', '#2C3E50', '#51bec4','1eaaf1','#51bec4'],
+  	sectionsColor: ['#262626', '#2C3E50','#fc5457', '#2C3E50', '#262626','#262626','#262622'],
   	direction:'horizontal'
   	});
   });
@@ -31,9 +25,6 @@ function getProcessingSketchId2 () { return 'kolam'; }
 
 </head>
 <body>
-
-	<div id="loading"><img src="img/logo2.png" class="img-responsive loadlog"></div>
-
 	<div id="pagepiling">
 		<div class="section" id="section1">
 			<div class="vidoverlay">
@@ -55,7 +46,7 @@ function getProcessingSketchId2 () { return 'kolam'; }
 				      // Automatic playback started!
 				      // Show playing UI.
 
-				      if($(window).width()>768){
+				if($(window).width()>768){
 				      $('.cover-image-wrapper').css({'width':'70%'});
 				  }
 				  else{
@@ -148,7 +139,7 @@ We believe that when you innovate for India, you innovate for the world. Outlier
 
 			</div>
 			<div class="col-xs-12 col-md-6">
-
+				<img src="img/vision.png" class="img-responsive">
 			</div>
 		</div>
 	</div>
@@ -232,24 +223,6 @@ We believe that when you innovate for India, you innovate for the world. Outlier
   })
   $('li').removeClass('active');
   $('.vision').addClass('active');
-
-
-
-
-
-
-  $(document).ready(function(){
-  	$(".section").each(function(i) {
-  		$(this).delay(i*500).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-  	});
-
-				    		// Show loading animation.
-
-
-
-				    	});
-
-
   </script>
 
 

@@ -121,16 +121,16 @@ cursor: pointer;
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
-    border: 1px solid transparent;
+
     white-space: nowrap;
     line-height: 20px;
     font-weight: 700;
     font-size: 15px;
     border-radius: 100px;
     -webkit-font-smoothing: antialiased;
-        background: #7eb530;
+        background: #ff5657;
     color: #fff;
-    border-color: #7eb530;
+    border-color: #ff5657;
         padding: 15px 20px;
     min-width: 70vw;
     margin-top: 5vh;
@@ -144,12 +144,16 @@ cursor: pointer;
 }
 .woo{
 	background: white;
-	color:#7eb530;
+	color:#ff5657;
 }
+
 .proceed:hover{
 	background:white;
-	color:#862d6a;
-	border:1px solid white;
+	color:#ff5657;
+}
+.woo:hover{
+	background: #ff5657;
+	color:white;
 }
 .play{
     width: 100px;
@@ -416,15 +420,15 @@ video{
   }
 }
 .cover-image-wrapper {
-    width: 40%;
+    width: 20%;
     height: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
+
     transform: translateX(-50%) translateY(-50%);
     overflow: hidden;
-    transition: 1s all;
+    transition: 1s all ease;
 }
 .vidzoom{
 	width: 70%;

@@ -1,0 +1,23 @@
+html,body{
+	font-family: 'Fira Sans';
+	overflow-y: auto;
+}
+.navbar{
+				background: #1f1f1f;
+				padding-bottom: 13vh;
+			}
+.clu:hover,.cleq:hover{
+	background:#121212;
+}
+.clu,.cleq{
+	cursor: pointer;
+}
+.active,.active:hover{
+	background: #ee4455;
+}
+h3,h5{
+	margin-top: 6vh;
+}
+p{
+	font-size: 1.3em;
+}
