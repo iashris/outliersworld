@@ -17,7 +17,7 @@ canvas {
 }
 </style>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,800|Playfair+Display:400,400i|Fira+Sans:200" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
 	<div id="p5canvas"></div>
@@ -25,9 +25,10 @@ canvas {
 	<img src="img/logo2.png" class="logoimg"><br>
 	<div class="col-xs-12 col-md-6 col-md-offset-2 centered">
 
-<h3 style="color:white">Building A Nation — One Project At A Time</h3>
-<p>We're showcasing India's most innovative tech and design projects to inspire students to pursue their own ideas.</p>
-<span class="proceed">Proceed</span>
+<h1 style="color:white;text-transform: uppercase;font-weight: 800">Building A Nation</h1>
+<h3 style="font-family: 'Playfair Display';font-style: italic;">One Project At A Time</h3>
+<p style="font-family: 'Fira Sans'">We're showcasing India's most innovative tech, design and research projects to inspire students to pursue their own ideas.</p>
+<span class="proceed boo">Proceed</span><span class="proceed woo">Skip Intro</span>
 	</div>
 	<div id="introsection" class="actualcentered">
 
@@ -143,7 +144,10 @@ $(child).addClass('appeared');
 	$('#footer').click(function(){
 		window.location='/home';
 	});
-	$('.proceed').click(function(){
+	$('.woo').click(function(){
+		window.location='/home';
+	});
+	$('.boo').click(function(){
 
 		radiustrig=true;
     //$(this).fadeOut("slow");
@@ -155,38 +159,99 @@ $(child).addClass('appeared');
     $('#animdiv').addClass('triggered');
 });
 
+var circ=function(){
+	this.centre=[random(width),random(height)];
+	this.rad=15+Math.random()*30;
+	this.wt=5*Math.random();
+	this.seed=parseInt(1000*Math.random());
+	this.speed=Math.random()*10;
+	this.show=function(){
+		noFill();
+		if(this.overlay){
 
+			fill(255);
+		}
+		strokeWeight(this.wt);
+		stroke(255,255,255,50);
+		ellipse(this.centre[0],this.centre[1],this.rad,this.rad);
+	}
+	this.update=function(){
+		this.centre[0]+=this.speed*(noise(this.seed+frameCount/10)-0.5);
+		this.centre[1]+=this.speed*(noise(23*this.seed+frameCount/10)-0.5);
+		if(dist(mouseX,mouseY,this.centre[0],this.centre[1])<this.rad){
+			this.overlay=true;
+			}else{
+				this.overlay=false;
+			}
+	}
+}
+var squar=function(){
+	this.centre=[random(width),random(height)];
+	this.rad=15+Math.random()*30;
+	this.wt=5*Math.random();
+	this.seed=parseInt(1000*Math.random());
+	this.speed=Math.random()*10;
+	this.overlay=false;
+	this.show=function(){
+
+		noFill();
+		if(this.overlay){
+
+			fill(255);
+		}
+		strokeWeight(this.wt);
+		stroke(255,255,255,50);
+		rect(this.centre[0],this.centre[1],this.rad,this.rad);
+	}
+	this.update=function(){
+		this.centre[0]+=this.speed*(noise(this.seed+frameCount/50)-0.5);
+		this.centre[1]+=this.speed*(noise(23*this.seed+frameCount/40)-0.5);
+		var f=dist(mouseX,mouseY,this.centre[0],this.centre[1]);
+	if(f<this.rad)this.overlay=true;
+	else this.overlay=false;
+	}
+
+}
 
 	function setup() {
 		var can=createCanvas(windowWidth, windowHeight);
 		can.parent('#p5canvas');
 		frameRate(30);
 		textSize(24);
+		rectMode(CENTER);
 		textFont('Times New Roman');
 		RADIUS=250;
+		circs=[];
+		for(var i=0;i<20;i++)circs.push(new circ());
+		for(var i=0;i<20;i++)circs.push(new squar());
 	}
 
 
 	function draw() {
-		if(radiustrig==true){
-			RADIUS=0;
-		}
-
-		theta+=.20;
 		clear();
-push();
-translate(width/2, height/2);
-rotate(PI*frameCount/1000);
-noFill();
+		circs.forEach(function(v){
+			v.update();
+			v.show();
+		});
+// 		if(radiustrig==true){
+// 			RADIUS=0;
+// 		}
 
-for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
-	stroke(100,100,100,150);
-	beginShape();
-	for (var j=-sin(i)*RADIUS;j<sin(i)*RADIUS+sin(i);j+=sin(i)*20) {
-		curveVertex(j, cos(i)*RADIUS+sin(theta-(j/40))*abs(i*10));
-	}
-	endShape();
-}
+// 		theta+=.20;
+// 		clear();
+// push();
+// translate(width/2, height/2);
+// rotate(PI*frameCount/1000);
+// noFill();
+
+// for (var i=-0.5*PI;i<PI+0.5*PI;i+=0.01*PI) {
+// 	stroke(255,255,255,30);
+// 	beginShape();
+// 	for (var j=-sin(i)*RADIUS;j<sin(i)*RADIUS+sin(i);j+=sin(i)*20) {
+// 		curveVertex(j, cos(i)*RADIUS+sin(theta-(j/40))*abs(i*10));
+// 	}
+// 	endShape();
+// }
 }
 
 function windowResized() {

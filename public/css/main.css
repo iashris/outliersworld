@@ -11,8 +11,8 @@ html {
 }
 
 .centered>p{
-	 font-family:'Poppins'!important;
 	 margin-top: 5vh;
+	 font-size: 1.3em;
 
 }
 .cluster{
@@ -58,6 +58,9 @@ text-align: center;
 	display: block;
 	margin-top: 10px;
 		text-align: justify;
+		line-height: 1.6;
+		font-family: 'Fira Sans';
+		font-size: 1.2em;
 }
 ul>li>p{
 	display: block;
@@ -83,6 +86,7 @@ ul>li{
 }
 #continue{
 	visibility: hidden;
+	text-align: center;
 }
 #animdiv{
     background-image: linear-gradient(to right, #cb2d3e, #ef473a);
@@ -135,6 +139,13 @@ cursor: pointer;
     z-index: 7;
     transition: 0.2s all;
 }
+.boo{
+	margin-right: 3vw;
+}
+.woo{
+	background: white;
+	color:#7eb530;
+}
 .proceed:hover{
 	background:white;
 	color:#862d6a;
@@ -164,7 +175,7 @@ cursor: pointer;
 	margin:20px;
 }
 .centered{
-	margin-top: 30vh;
+	margin-top: 15vh;
 	z-index: 7;
 }
 
