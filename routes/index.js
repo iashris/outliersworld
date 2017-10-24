@@ -28,7 +28,11 @@ router.get('/clusters', function(req, res, next) {
 	});
 });
 router.get('/resources', function(req, res, next) {
+	gsheet('1ZEyivQwtoQwNdXLCSkGXtlOxUvAV2kbXYhA1XLzMJcQ/edit#gid=226239407', (data)=>{
 
+  console.log('Try callback ', data.length);  // array of objects
+ // res.render('resources', { layout: 'layout.hbs' })
+ res.send(data);
 
 });
 

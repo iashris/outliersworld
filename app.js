@@ -38,8 +38,6 @@ app.use("/js", express.static(__dirname + '/public/js'));
 app.use("/img",  express.static(__dirname + '/public/img'));
 app.use("/res",  express.static(__dirname + '/public/res'));
 app.use("/maestros",  express.static(__dirname + '/public/maestros'));
-
-
 app.use('/', routes);
 app.use('/godmode', godmode);
 
