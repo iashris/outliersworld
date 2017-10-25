@@ -34,7 +34,7 @@ int pictures = names.length;
 void setup()
 {
 
-  size(480, 600);
+  size(480, 580);
   frameRate(60);
   maxpixel = height * width;
   selectPicture(0);

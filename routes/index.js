@@ -12,9 +12,10 @@ router.get('/home',function(req,res,next){
 });
 router.get('/projects', function(req, res, next) {
 	//Load Outliers Projects DB and send all projects for projects to render
-	gsheet('1XrDALyA84t4jT3Mh2WdhAd_lzpyc9eSfT_n5MoV1bOA', (data)=>{
+	gsheet('1sFlWBjlFLCOXvl-PixptFTBwAj-2uUNF4A8oMBxmrds', (data)=>{
 	 var DATA={};
-	 res.render('projects', { layout: 'layout.hbs' ,'data':DATA})
+	 //res.render('projects', { layout: 'layout.hbs' ,'data':DATA})
+	 res.send(data)
 	});
 });
 

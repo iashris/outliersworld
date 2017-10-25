@@ -45,15 +45,21 @@ text-align: center;
 }
 
 .field{
-	background: #f65756;
+	background: #fce433;
 	padding: 4px;
+	color:black;
 }
 .bigchunk{
 	z-index: 3;
 	margin-top:5vh;
 }
 
-
+.bigchunk>h2{
+		background: #fce433;
+	padding: 4px;
+	color:black;
+	display: inline-block;
+}
 .bigchunk>p{
 	display: block;
 	margin-top: 10px;
@@ -61,6 +67,7 @@ text-align: center;
 		line-height: 1.6;
 		font-family: 'Fira Sans';
 		font-size: 1.2em;
+		font-weight: 200;
 }
 ul>li>p{
 	display: block;
@@ -80,8 +87,9 @@ ul>li{
 	max-width: 50vw;
 }
 .vidoverlay>p{
-	font-size: 1.3em;
-	font-family: 'Poppins';
+	font-size: 1.35em;
+	font-family: 'Fira Sans';
+
 
 }
 #continue{
@@ -89,7 +97,7 @@ ul>li{
 	text-align: center;
 }
 #animdiv{
-    background-image: linear-gradient(to right, #cb2d3e, #ef473a);
+background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
     position: fixed;
     z-index: 0;
     width: 100%;
@@ -151,10 +159,6 @@ cursor: pointer;
 	background:white;
 	color:#ff5657;
 }
-.woo:hover{
-	background: #ff5657;
-	color:white;
-}
 .play{
     width: 100px;
     height: 100px !important;
@@ -208,6 +212,7 @@ audio{
 	margin-top: 25px;
 	color: white;
 	opacity: 0.0;
+	font-family: 'Playfair Display';
 }
 .actualcentered{
 	width: 100vw;
@@ -274,12 +279,12 @@ margin-top: 0;
 	font-family: 'Poppins'!important;
 }
 video{
-	opacity: 0.6;
+	opacity: 1;
 	height: 100%;
 	overflow: hidden;
 	    min-width: 100%;
     min-height: 100%;
-    opacity: .4;
+    opacity: .65;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -421,7 +426,7 @@ video{
 }
 .cover-image-wrapper {
     width: 80%;
-    height: 70%;
+    height: 65%;
     position: absolute;
     top: 50%;
     left: 50%;
