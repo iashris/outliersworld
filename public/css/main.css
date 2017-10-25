@@ -97,7 +97,7 @@ ul>li{
 	text-align: center;
 }
 #animdiv{
-background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+background-image: linear-gradient(to right, #0a225b 0%, #495aff 100%);
     position: fixed;
     z-index: 0;
     width: 100%;
@@ -425,15 +425,15 @@ video{
   }
 }
 .cover-image-wrapper {
+	will-change: width;
     width: 80%;
     height: 65%;
     position: absolute;
     top: 50%;
     left: 50%;
-
     transform: translateX(-50%) translateY(-50%);
     overflow: hidden;
-    transition: 1s all ease;
+    transition: 1s all;
 }
 .vidzoom{
 	width: 70%;
@@ -461,6 +461,10 @@ ul.nav>li{
 	z-index: 200;
 	text-align: center;
 }
+._5lm5{
+display: none!important;
+visibility: hidden;
+}
 .loadlog{
 	 display: block;
   position: absolute;
@@ -482,7 +486,7 @@ ul.nav>li{
 		width:20%;
 	}
 html {
-    overflow: hidden;
+
     height: 100%;
     font-family:'Playfair Display';
     text-align: justify;

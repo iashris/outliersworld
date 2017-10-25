@@ -1,0 +1,19 @@
+html,body{
+	background: #f4f4f7;
+}
+.project{
+	background: #333;
+	height:60vh;
+	border-radius: 0.4rem;
+	margin-bottom:5vh;
+	padding:3vw;
+	width: 100%;
+	 transition: all .2s ease-in-out;
+	 cursor: pointer;
+}
+.projname{
+	text-transform: uppercase;
+	font-family: 'Poppins';
+	font-weight: 800;
+}
+.project:hover { transform: scale(0.98); }

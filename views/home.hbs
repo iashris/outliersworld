@@ -4,7 +4,7 @@
 var deleteLog = false;
 $(document).ready(function() {
   	if($(window).width()>768)$('#pagepiling').pagepiling({
-  	sectionsColor: ['linear-gradient(to right, #cb356b, #bd3f32)', 'linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%)','linear-gradient(to top, #f77062 0%, #fe5196 100%)', 'linear-gradient(to right, #136a8a, #267871)', 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)','\linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)'],
+  	sectionsColor: ['linear-gradient(to right, #cb356b, #bd3f32)', 'linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%)','linear-gradient(-163deg, rgb(173, 31, 134), rgb(225, 42, 42))', 'linear-gradient(-39deg, rgb(24, 197, 225), rgb(72, 23, 235))', 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)','\linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)'],
   	direction:'horizontal',
   	onLeave: function(index, nextIndex, direction){
   		if(index<2){
@@ -22,7 +22,14 @@ $(document).ready(function() {
 <link rel="stylesheet" type="text/css" href="css/examples.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
-
+<style type="text/css">
+@media(min-width: 767px){
+html,body{
+overflow: hidden;
+height: 100vh;
+}
+}
+</style>
 </head>
 <body>
 	<div id="pagepiling">
@@ -81,10 +88,9 @@ $(document).ready(function() {
 			<div class="container">
 				<div class="col-xs-12 col-md-5 bigchunk" id="scroll-4">
 					<h2>WHO ARE OUTLIERS ?</h2>
-					<p>There exist people in every generation who stand out from the rest. They see things differently and use their unconventional ideas to chart out their own paths.</span></p>
+					<p>There exist people in every generation whose ideas make them stand out from the rest. They use their unconventional ideas to chart out their own paths.</span></p>
 					<p>
-					We call these people the Outliers. The world may call them crazy but without their ideas, the world would have been a dull place.
-					</p>
+					Often it is difficult to keep going all alone without the right encouragement and guidance. We want to be a platform that welcomes these misfits. We want to encourage them and initiate projects with them to innovate for the .</p>
 				</div>
 				<div class="col-md-6">
 {{!-- 					<div id="content">
@@ -107,7 +113,7 @@ $(document).ready(function() {
 		<div class="container">
 			<div class="col-xs-12 col-md-5 bigchunk">
 				<h2>WHY WE'RE HERE</h2>
-				<p>Our goal is to build a team of the most talented students from different backgrounds who use their knowledge, talent and creativity to take up the task of innovating India's social systems with technology, design and research.</p>
+				<p>Our goal is to build a team of the most talented individuals from different backgrounds who use their knowledge and creativity to innovate India's multifacted systems.</p>
 				</p>
 				<p>
 We believe that when you innovate for India, you innovate for the world. Outliers will be a forum for showcasing and developing projects that can act as a catalyst for the innovation revolution in India.</p>

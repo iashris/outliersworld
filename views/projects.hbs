@@ -1,4 +1,23 @@
+<div class="container" style="margin-top:20vh;">
+<link rel="stylesheet" type="text/css" href="css/projects.css">
+
+<div class="project_list">
+  {{#each data}}
+    <div class="project" data-id={{this.projectid}}>
+    <h2 class="projname">{{this.projectname}}</h2>
+    <p class="projdesc">{{this.description}}</p>
+</div>
+  {{/each}}
+</div>
+
+
+</div>
+
+
 <script type="text/javascript">
  $('li').removeClass('active');
  $('.projects').addClass('active');
+$('.project').click(function(){
+window.location='/project/'+$(this).data('id');
+});
 </script>

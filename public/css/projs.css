@@ -1,5 +1,5 @@
 html,body{
-	background: #262626!important;
+	background: #262626;
 }
 .navbar{
 position: fixed;
@@ -19,7 +19,7 @@ right:0;
 }
 .navbar-default .navbar-nav>li>a {
     color: white;
-    min-height: 5vh;
+    min-height: 3vh;
     opacity: 0.4;
     font-family: 'Poppins';
       box-shadow: none!important;

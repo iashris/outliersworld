@@ -2,10 +2,7 @@ html,body{
 	font-family: 'Fira Sans';
 	overflow-y: auto;
 }
-.navbar{
-				background: #1f1f1f;
-				padding-bottom: 13vh;
-			}
+
 .clu:hover,.cleq:hover{
 	background:#121212;
 }
