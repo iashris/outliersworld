@@ -13,17 +13,19 @@ router.get('/home',function(req,res,next){
 router.get('/projects', function(req, res, next) {
 	//Load Outliers Projects DB and send all projects for projects to render
 	gsheet('1sFlWBjlFLCOXvl-PixptFTBwAj-2uUNF4A8oMBxmrds', (data)=>{
-		console.log(data);
-	 res.render('projects', { layout: 'wlayout.hbs' ,'data':data})
+	var DATA=[];
+	var size = 3;
+	while (data.length > 0)DATA.push(data.splice(0, size));
+	 res.render('projects', { layout: 'wlayout.hbs' ,'data':DATA});
 	});
 });
-router.get('/project/:projectid',function(req,res){
-		gsheet('1sFlWBjlFLCOXvl-PixptFTBwAj-2uUNF4A8oMBxmrds', (data)=>{
-		//load correct data
-		//get likes for project
-	 res.render('projects', { layout: 'wlayout.hbs' ,'data':data})
-	});
-});
+// router.get('/project/:projectid',function(req,res){
+// 		gsheet('1sFlWBjlFLCOXvl-PixptFTBwAj-2uUNF4A8oMBxmrds', (data)=>{
+// 		//load correct data
+// 		//get likes for project
+// 	 res.render('contact', { layout: 'wlayout.hbs'})
+// 	});
+// });
 router.get('/contact', function(req, res, next) {
   res.render('contact', { layout: 'wlayout.hbs' })
 });

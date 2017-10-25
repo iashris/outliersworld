@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var godmode = require('./routes/godmode');
-
+var project=require('./routes/project');
 var app = express();
 
 // view engine setup
@@ -39,6 +39,7 @@ app.use("/img",  express.static(__dirname + '/public/img'));
 app.use("/res",  express.static(__dirname + '/public/res'));
 app.use("/maestros",  express.static(__dirname + '/public/maestros'));
 app.use('/', routes);
+app.use('/project',project);
 app.use('/godmode', godmode);
 
 // catch 404 and forward to error handler
