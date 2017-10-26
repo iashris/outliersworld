@@ -6,10 +6,15 @@
   {{#each data}}
   <div class="row">
   	{{#each this}}
-  	<div class="col-md-4 col-xs-6">
+  	<div class="col-md-4 col-xs-12">
     <div class="project" data-id={{this.projectid}}>
+    	<img src="http://iashris.com/img/pth/6.gif" class="img-responsive thumbnail">
+    	<div class="details">
 	    <h2 class="projname">{{this.name}}</h2>
+	    <h5 class="maker">by {{this.collaborators}}</h5>
 	    <p class="projdesc">{{this.description}}</p>
+	</div>
+
 	</div>
 </div>
 	{{/each}}

@@ -3,7 +3,7 @@ html,body{
 }
 .project{
 	background: #333;
-	height:38vh;
+	height:70vh;
 	border-radius: 0.4rem;
 	padding:3vw;
 	 transition: all .2s ease-in-out;
@@ -16,3 +16,16 @@ html,body{
 	font-weight: 800;
 }
 .project:hover { transform: scale(0.98); }
+.projdesc{
+	font-family: 'Fira Sans';
+	font-weight: 200;
+	visibility: hidden;
+}
+.maker{
+	font-style: italic;
+}
+@media (min-width: 767px){
+	.projdesc{
+		visibility: visible;
+	}
+	}
